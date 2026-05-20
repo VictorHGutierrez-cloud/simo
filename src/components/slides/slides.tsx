@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Check } from "lucide-react";
-import { CLIENT, PRICING_ROW_USD, PRICING_TOTALS_USD } from "@/utils/constants";
+import { CLIENT, PRICING_TOTALS_USD, PROPOSAL_PRICING } from "@/utils/constants";
 
 interface SlideData {
   id: string;
@@ -21,7 +21,12 @@ const SlideSubtitle = ({ children }: { children: ReactNode }) => (
   <p className="text-[17px] md:text-[19px] opacity-80 font-light leading-snug max-w-[1000px]">{children}</p>
 );
 
-const { seatCount: SEATS, licenseDiscountPercent: DISCOUNT_PCT, organizationName: ORG } = CLIENT;
+const {
+  seatCount: SEATS,
+  licenseDiscountPercent: DISCOUNT_PCT,
+  factorialOneDiscountPercent: ONE_DISCOUNT_PCT,
+  organizationName: ORG,
+} = CLIENT;
 
 export const slides: SlideData[] = [
   {
@@ -33,12 +38,12 @@ export const slides: SlideData[] = [
         <SectionLabel>Proposta Factorial</SectionLabel>
         <h1 className="text-[44px] md:text-[52px] font-light leading-[1.08] mb-4 max-w-[1200px]">{ORG}</h1>
         <p className="text-[17px] md:text-[19px] opacity-80 font-light mb-3">
-          {PRICING_ROW_USD.bundleName} (Enterprise) — Core, registo de horas, ausências, formações, desempenho e
-          envolvimento, com dados preparados para o PHC.
+          {PROPOSAL_PRICING.bundleName} (Enterprise), ATS {PROPOSAL_PRICING.recruitment.tier} e Factorial One — Core,
+          operações, formações, desempenho e envolvimento, com dados preparados para o PHC.
         </p>
         <p className="text-[14px] md:text-[15px] opacity-60 font-light">
-          {SEATS} lugares · ROW USD (mensal) · {DISCOUNT_PCT}% desconto comercial (licenças e implementação) · Sem ATS na
-          fase 1
+          {SEATS} lugares · PEPM e ATS −{DISCOUNT_PCT}% · Factorial One −{ONE_DISCOUNT_PCT}% · USD mensais (acordo
+          comercial)
         </p>
         <div className="mt-8 flex items-center gap-4">
           <div className="w-10 h-10 border border-white/30 flex items-center justify-center">
@@ -74,9 +79,8 @@ export const slides: SlideData[] = [
               progresso.
             </p>
             <p className="text-[15px] md:text-[16px] opacity-70 leading-snug">
-              Esta proposta aplica <strong className="opacity-100">{DISCOUNT_PCT}%</strong> de desconto comercial em{" "}
-              <strong className="opacity-100">licenças</strong> e <strong className="opacity-100">implementação</strong>{" "}
-              (lista ROW).
+              Os valores de investimento são o acordo SIMO — linha PEPM ({DISCOUNT_PCT}% off sobre lista), ATS Business (
+              {DISCOUNT_PCT}%) e tokens Factorial One ({ONE_DISCOUNT_PCT}% off), em USD mensais.
             </p>
           </div>
           <div className="space-y-2">
@@ -99,7 +103,7 @@ export const slides: SlideData[] = [
               {
                 icon: "🤝",
                 title: "Preço acordo",
-                desc: `${DISCOUNT_PCT}% na lista para licenças e implementação.`,
+                desc: `${DISCOUNT_PCT}% em PEPM/ATS · ${ONE_DISCOUNT_PCT}% em Factorial One — ver quadro mensal.`,
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-3 border border-foreground/15 p-3">
@@ -125,8 +129,8 @@ export const slides: SlideData[] = [
         <SectionLabel>O que pediram</SectionLabel>
         <SlideTitle>RH de ponta a ponta, com PHC na folha</SlideTitle>
         <SlideSubtitle>
-          Core, registo de horas, ausências, formações (LMS), avaliação de desempenho, envolvimento — e exportação
-          estruturada para o PHC.
+          Core, horas, ausências, LMS, desempenho, envolvimento, ATS {PROPOSAL_PRICING.recruitment.tier} e Factorial One —
+          dados preparados para o PHC.
         </SlideSubtitle>
         <div className="grid grid-cols-2 gap-4 mt-5">
           {[
@@ -160,6 +164,11 @@ export const slides: SlideData[] = [
               title: "Envolvimento",
               desc: "Inquéritos de clima e NPS para acompanhar a organização.",
             },
+            {
+              icon: "📣",
+              title: `Recrutamento (${PROPOSAL_PRICING.recruitment.tier})`,
+              desc: "ATS ao ritmo das vagas: pipeline, página de emprego e comunicação com candidatos.",
+            },
           ].map((f) => (
             <div key={f.title} className="border border-white/20 p-4">
               <span className="text-[26px] block mb-2">{f.icon}</span>
@@ -179,13 +188,13 @@ export const slides: SlideData[] = [
     content: (
       <div className="flex flex-col justify-center h-full px-14">
         <SectionLabel>Pacote recomendado</SectionLabel>
-        <SlideTitle>
-          {PRICING_ROW_USD.bundleName} · Enterprise
-        </SlideTitle>
+        <SlideTitle>{PROPOSAL_PRICING.bundleName} · Enterprise</SlideTitle>
         <SlideSubtitle>
-          Um pacote mensal para {SEATS} colaboradores — lista{" "}
-          <strong className="opacity-100">${PRICING_ROW_USD.listPricePerSeatPerMonth} USD/lugar/mês</strong> antes do
-          desconto.
+          Pacote mensal para {SEATS} colaboradores: bundle + ATS {PROPOSAL_PRICING.recruitment.tier} + Factorial One —
+          PEPM{" "}
+          <strong className="opacity-100">${PROPOSAL_PRICING.pepmListPrice}</strong> antes do{" "}
+          <strong className="opacity-100">{DISCOUNT_PCT}%</strong>; linha própria para tokens com{" "}
+          <strong className="opacity-100">{ONE_DISCOUNT_PCT}%</strong>.
         </SlideSubtitle>
         <div className="grid grid-cols-2 gap-6 mt-5">
           <div className="border border-white/20 p-5">
@@ -220,13 +229,13 @@ export const slides: SlideData[] = [
             </div>
           </div>
           <div className="border border-white/20 p-5">
-            <h3 className="text-[17px] font-medium mb-3">Sem recrutamento na fase 1</h3>
+            <h3 className="text-[17px] font-medium mb-3">ATS {PROPOSAL_PRICING.recruitment.tier} + Factorial One</h3>
             <p className="text-[14px] opacity-75 leading-snug mb-3">
-              Volume de contratações modesto — o ATS pode ser um add-on futuro. Prioridade: operação diária, dados para
-              o PHC e talento.
+              O plano Business dá amplitude para vagas activas surpreendentes ao longo do ano; Factorial One traz IA
+              dentro da Factorial ({ONE_DISCOUNT_PCT}% sobre a linha de tokens na proposta).
             </p>
             <p className="text-[12px] opacity-55 leading-snug border-t border-white/15 pt-3">
-              Referência: prazo interno até <strong className="opacity-80">final de junho de 2026</strong>.
+              Referência: operacional até <strong className="opacity-80">final de junho de 2026</strong>.
             </p>
           </div>
         </div>
@@ -276,70 +285,79 @@ export const slides: SlideData[] = [
     content: (
       <div className="flex flex-col justify-center h-full px-14">
         <SectionLabel>Investimento</SectionLabel>
-        <SlideTitle>Estimativa mensal (ROW USD · faturação mensal)</SlideTitle>
+        <SlideTitle>Valor mensal (USD) — conforme esta proposta</SlideTitle>
 
         <div className="grid grid-cols-2 gap-8 mt-2">
-          <div>
-            <h3 className="text-[17px] font-medium opacity-80 mb-3">Subscrição mensal</h3>
-            <div className="border border-foreground/20 p-5 space-y-2 text-[13px]">
-              <div className="flex justify-between gap-2">
-                <span className="opacity-65">
-                  {PRICING_ROW_USD.bundleName} ({SEATS} × ${PRICING_ROW_USD.listPricePerSeatPerMonth})
-                </span>
-                <span className="font-medium shrink-0">${PRICING_TOTALS_USD.licenseListSubtotal.toFixed(2)}/mês</span>
-              </div>
-              <div className="flex justify-between gap-2 text-emerald-700 dark:text-emerald-400">
-                <span className="opacity-80">Desconto comercial ({DISCOUNT_PCT}%)</span>
-                <span className="font-medium shrink-0">
-                  −${(PRICING_TOTALS_USD.licenseListSubtotal - PRICING_TOTALS_USD.licenseDiscountedSubtotal).toFixed(2)}
-                  /mês
-                </span>
-              </div>
-              <div className="flex justify-between gap-2 border-t border-foreground/15 pt-2">
-                <span className="opacity-65">Licenças após desconto</span>
-                <span className="font-medium">${PRICING_TOTALS_USD.licenseDiscountedSubtotal.toFixed(2)}/mês</span>
-              </div>
-              <p className="text-[11px] opacity-50 pt-1 leading-snug">
-                {DISCOUNT_PCT}% de desconto comercial nas licenças e implementação.
-              </p>
+          <div className="space-y-3 border border-foreground/20 p-5 text-[13px]">
+            <h3 className="text-[15px] font-medium opacity-90 mb-2">Licenças (PEPM)</h3>
+            <div className="flex justify-between gap-2">
+              <span className="opacity-65">${PROPOSAL_PRICING.pepmListPrice} × {SEATS}</span>
+              <span className="font-medium">${PRICING_TOTALS_USD.licenseListSubtotal.toFixed(2)}/mês</span>
+            </div>
+            <div className="flex justify-between gap-2 text-emerald-700 dark:text-emerald-400">
+              <span>{DISCOUNT_PCT}% off</span>
+              <span>
+                −${(PRICING_TOTALS_USD.licenseListSubtotal - PRICING_TOTALS_USD.licenseDiscountedSubtotal).toFixed(2)}/mês
+              </span>
+            </div>
+            <div className="flex justify-between gap-2 border-t border-foreground/15 pt-2 font-medium">
+              <span>Total</span>
+              <span>${PRICING_TOTALS_USD.licenseDiscountedSubtotal.toFixed(2)}/mês</span>
+            </div>
+
+            <h3 className="text-[15px] font-medium opacity-90 mb-2 pt-3 border-t border-foreground/10">
+              Recrutamento ({PROPOSAL_PRICING.recruitment.tier})
+            </h3>
+            <div className="flex justify-between gap-2">
+              <span className="opacity-65">Lista</span>
+              <span className="font-medium">${PRICING_TOTALS_USD.recruitmentListPerMonth.toFixed(2)}/mês</span>
+            </div>
+            <div className="flex justify-between gap-2 text-emerald-700 dark:text-emerald-400">
+              <span>{DISCOUNT_PCT}% off</span>
+              <span>
+                −$
+                {(
+                  PRICING_TOTALS_USD.recruitmentListPerMonth - PRICING_TOTALS_USD.recruitmentDiscountedSubtotal
+                ).toFixed(2)}
+                /mês
+              </span>
+            </div>
+            <div className="flex justify-between gap-2 border-t border-foreground/15 pt-2 font-medium">
+              <span>Total</span>
+              <span>${PRICING_TOTALS_USD.recruitmentDiscountedSubtotal.toFixed(2)}/mês</span>
+            </div>
+
+            <h3 className="text-[15px] font-medium opacity-90 mb-2 pt-3 border-t border-foreground/10">
+              Tokens Factorial One
+            </h3>
+            <div className="flex justify-between gap-2">
+              <span className="opacity-65">Lista</span>
+              <span className="font-medium">${PRICING_TOTALS_USD.factorialOneListPerMonth.toFixed(2)}/mês</span>
+            </div>
+            <div className="flex justify-between gap-2 text-emerald-700 dark:text-emerald-400">
+              <span>{ONE_DISCOUNT_PCT}% off</span>
+              <span>
+                −$
+                {(
+                  PRICING_TOTALS_USD.factorialOneListPerMonth -
+                  PRICING_TOTALS_USD.factorialOneDiscountedSubtotal
+                ).toFixed(2)}
+                /mês
+              </span>
+            </div>
+            <div className="flex justify-between gap-2 border-t border-foreground/15 pt-2 font-medium">
+              <span>Total</span>
+              <span>${PRICING_TOTALS_USD.factorialOneDiscountedSubtotal.toFixed(2)}/mês</span>
             </div>
           </div>
 
-          <div>
-            <h3 className="text-[17px] font-medium opacity-80 mb-3">Totais e implementação</h3>
-            <div className="space-y-3">
-              <div className="border-2 border-foreground/30 bg-foreground/[0.06] p-4 text-center">
-                <p className="text-[12px] opacity-55 mb-1">Total mensal estimado</p>
-                <p className="text-[44px] font-light leading-none">${PRICING_TOTALS_USD.monthlyTotal.toFixed(2)}</p>
-                <p className="text-[11px] opacity-45 mt-1">USD · antes de impostos se aplicável</p>
-              </div>
-
-              <div className="border border-foreground/20 p-4 text-[12px] space-y-1.5">
-                <p className="font-medium opacity-90">Implementação (única vez)</p>
-                <p className="flex justify-between gap-2">
-                  <span className="opacity-70">Lista (referência)</span>
-                  <span>${PRICING_TOTALS_USD.implementationListOneTime.toFixed(0)}</span>
-                </p>
-                <p className="flex justify-between gap-2 text-emerald-700 dark:text-emerald-400">
-                  <span>Desconto ({DISCOUNT_PCT}%)</span>
-                  <span>
-                    −$
-                    {(
-                      PRICING_TOTALS_USD.implementationListOneTime - PRICING_TOTALS_USD.implementationOneTime
-                    ).toFixed(0)}
-                  </span>
-                </p>
-                <p className="flex justify-between gap-2 border-t border-foreground/15 pt-2 font-medium">
-                  <span>Preço final</span>
-                  <span>${PRICING_TOTALS_USD.implementationOneTime.toFixed(0)} USD</span>
-                </p>
-                <p className="text-[10px] opacity-45 leading-snug">
-                  ~1 h/semana com o especialista; go-live em ~1,5 meses. Âmbito final no order form.
-                </p>
-              </div>
-
-              <p className="text-[11px] opacity-55 px-1 leading-snug">Cartão ou transferência em USD/EUR, conforme acordo.</p>
+          <div className="space-y-4">
+            <div className="border-2 border-foreground/30 bg-foreground/[0.06] p-6 text-center">
+              <p className="text-[12px] opacity-55 mb-2">Total mensal estimado</p>
+              <p className="text-[44px] font-light leading-none">${PRICING_TOTALS_USD.monthlyTotal.toFixed(2)}</p>
+              <p className="text-[11px] opacity-45 mt-2">Valores finais no order form · impostos se aplicável</p>
             </div>
+            <p className="text-[11px] opacity-55">Cartão ou transferência em USD/EUR, conforme acordo.</p>
           </div>
         </div>
       </div>
@@ -364,8 +382,8 @@ export const slides: SlideData[] = [
             <p className="text-[11px] uppercase tracking-widest opacity-50 mb-2">Durante</p>
             <h3 className="text-[17px] font-medium mb-3">Especialista de onboarding</h3>
             <p className="text-[13px] opacity-70 leading-snug mb-4">
-              Configuração do {PRICING_ROW_USD.bundleName}: Core, horas, ausências, formações, desempenho, envolvimento e
-              exportações para o PHC.
+              Configuração do {PROPOSAL_PRICING.bundleName}: Core, horas, ausências, formações, desempenho,
+              envolvimento, ATS {PROPOSAL_PRICING.recruitment.tier}, Factorial One e exportações para o PHC.
             </p>
             <ul className="space-y-2 text-[12px] opacity-75">
               <li className="flex gap-2">

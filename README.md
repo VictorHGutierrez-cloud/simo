@@ -1,6 +1,6 @@
 # Proposta Factorial × SIMO
 
-Microsite da proposta comercial (React + Vite + Tailwind). Idioma: **português de Portugal**.
+Microsite da proposta comercial (React + Vite + Tailwind). Idioma: **português de Portugal**. Os valores no site são o **acordo SIMO** (USD mensais: PEPM, ATS Business e Factorial One), não uma lista ROW genérica.
 
 ## Como ver localmente (no computador)
 

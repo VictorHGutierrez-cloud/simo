@@ -13,7 +13,7 @@ const phases = [
   {
     phase: 2,
     title: "Commercial confirmation",
-    description: `Order form, billing currency (USD/EUR), and nonprofit discount documentation (${CLIENT.licenseDiscountPercent}% on licenses).`,
+    description: `Order form, billing currency (USD/EUR), and commercial pricing confirmation (PEPM/ATS ${CLIENT.licenseDiscountPercent}%; Factorial One ${CLIENT.factorialOneDiscountPercent}%).`,
     participants: [CLIENT.organizationName, "Factorial"],
     status: "Suggested",
   },

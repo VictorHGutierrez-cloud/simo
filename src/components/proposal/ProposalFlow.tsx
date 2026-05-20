@@ -1,8 +1,13 @@
 import { Check, ExternalLink } from "lucide-react";
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
-import { CLIENT, PRICING_ROW_USD, PRICING_TOTALS_USD } from "@/utils/constants";
+import { CLIENT, PRICING_TOTALS_USD, PROPOSAL_PRICING } from "@/utils/constants";
 
-const { seatCount: SEATS, licenseDiscountPercent: DISCOUNT_PCT, organizationName: ORG } = CLIENT;
+const {
+  seatCount: SEATS,
+  licenseDiscountPercent: DISCOUNT_PCT,
+  factorialOneDiscountPercent: ONE_DISCOUNT_PCT,
+  organizationName: ORG,
+} = CLIENT;
 
 function Divider({ light }: { light?: boolean }) {
   return (
@@ -41,12 +46,13 @@ export default function ProposalFlow() {
         </div>
         <Divider light />
         <p className={`mt-auto max-w-[55ch] ${bodyCls}`}>
-          {PRICING_ROW_USD.bundleName} (Enterprise) — um espaço integrado para Core, registo de horas, ausências,
-          formações, avaliação de desempenho e envolvimento, com ligação limpa ao PHC para a folha de retribuição.
+          {PROPOSAL_PRICING.bundleName} (Enterprise), <strong>ATS em plano Business</strong> e{" "}
+          <strong>Factorial One</strong> (tokens de IA) — um fluxo único de Core, operações, formações, desempenho e
+          envolvimento, com dados preparados para o PHC.
         </p>
         <p className={`text-[clamp(0.85rem,1.3vw,1rem)] opacity-80`}>
-          {SEATS} lugares · ROW USD (mensal) · {DISCOUNT_PCT}% de desconto comercial (licenças e implementação) · Sem
-          módulo de recrutamento na fase 1
+          {SEATS} lugares · PEPM e recrutamento com {DISCOUNT_PCT}% · Factorial One com {ONE_DISCOUNT_PCT}% · Valores em
+          USD (mensais), conforme acordo comercial
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-6 border-t border-white/30 pt-6">
           <div className="flex h-12 w-12 items-center justify-center border border-white/40 text-xl font-light">
@@ -88,11 +94,10 @@ export default function ProposalFlow() {
             </p>
             <p>
               Com cerca de <strong className="font-semibold">dois técnicos de RH</strong> para ~80 colaboradores, é
-              preciso <strong className="font-semibold">self-service</strong> para colaboradores e gestores, e dados
-              fiáveis para o financeiro. Esta proposta aplica{" "}
-              <strong className="font-semibold">{DISCOUNT_PCT}%</strong> de desconto comercial sobre{" "}
-              <strong className="font-semibold">licenças</strong> e{" "}
-              <strong className="font-semibold">implementação</strong> (lista ROW).
+              preciso <strong className="font-semibold">self-service</strong> para colaboradores e gestores, dados
+              fiáveis para o financeiro e <strong className="font-semibold">ATS</strong> dimensionado ao volume de vagas.
+              Os valores de investimento abaixo são o <strong className="font-semibold">acordo SIMO</strong> (USD
+              mensais).
             </p>
           </div>
           <div className="flex flex-col gap-4">
@@ -115,7 +120,7 @@ export default function ProposalFlow() {
               {
                 icon: "🤝",
                 title: "Preço acordo",
-                desc: `${DISCOUNT_PCT}% de desconto comercial nas licenças e na implementação, alinhado com a conversa com a equipa.`,
+                desc: `PEPM e ATS com ${DISCOUNT_PCT}%; Factorial One com ${ONE_DISCOUNT_PCT}% — linha a linha na secção de investimento.`,
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 border border-black/15 bg-white/50 p-4">
@@ -146,8 +151,8 @@ export default function ProposalFlow() {
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
           Ficha e documentos digitais, registo de horas e ausências com aprovações, formações (LMS), avaliação de
-          desempenho e envolvimento — e exportação estruturada para o <strong>PHC</strong>, que continua a processar a
-          folha de retribuição.
+          desempenho, envolvimento e recrutamento com <strong>ATS Business</strong> — e exportação estruturada para o{" "}
+          <strong>PHC</strong>, que continua a processar a folha de retribuição.
         </p>
         <Divider light />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -182,6 +187,11 @@ export default function ProposalFlow() {
               title: "Envolvimento",
               desc: "Inquéritos (clima, NPS), rituais de feedback e acompanhamento das equipas.",
             },
+            {
+              icon: "📣",
+              title: `Recrutamento (${PROPOSAL_PRICING.recruitment.tier})`,
+              desc: "ATS com páginas de carreira, pipeline, integrações e comunicação com candidatos — alinhado ao vosso ritmo de vagas.",
+            },
           ].map((f) => (
             <div key={f.title} className="border border-white/20 p-4">
               <span className="text-3xl">{f.icon}</span>
@@ -201,16 +211,15 @@ export default function ProposalFlow() {
         <p className={labelCls}>04 — Pacote recomendado</p>
         <Divider light />
         <h2 className={headCls}>
-          {PRICING_ROW_USD.bundleName}
+          {PROPOSAL_PRICING.bundleName}
           <br />
           Enterprise
         </h2>
         <Divider light />
         <p className={`max-w-[60ch] ${bodyCls}`}>
-          Uma subscrição mensal para <strong>{SEATS}</strong> colaboradores: <strong>Core</strong>,{" "}
+          Pacote mensal combinado para <strong>{SEATS}</strong> colaboradores: <strong>bundle</strong> com Core,{" "}
           <strong>registo de horas</strong>, <strong>ausências</strong>, <strong>formações</strong>,{" "}
-          <strong>Performance</strong> e <strong>Engagement</strong> — preço de lista{" "}
-          <strong>${PRICING_ROW_USD.listPricePerSeatPerMonth} USD/lugar/mês</strong> antes do desconto comercial.
+          <strong>Performance</strong> e <strong>Engagement</strong>, mais <strong>ATS {PROPOSAL_PRICING.recruitment.tier}</strong> para suportar o volume de candidaturas e vagas activas — e pacote <strong>Factorial One</strong> para automação segura dentro da Factorial (tokens de IA, mensais).
         </p>
         <Divider light />
         <div className="grid gap-8 lg:grid-cols-2">
@@ -273,25 +282,25 @@ export default function ProposalFlow() {
             </div>
           </div>
           <div className="space-y-4 border border-white/20 p-6">
-            <h3 className="text-lg font-bold uppercase tracking-wide">Fase 1 · Sem recrutamento</h3>
+            <h3 className="text-lg font-bold uppercase tracking-wide">ATS {PROPOSAL_PRICING.recruitment.tier} + Factorial One</h3>
             <p className={`${bodyCls} opacity-90`}>
-              O volume de contratações é modesto (ordem de <strong>duas admissões por ano</strong>). Por simplicidade e
-              custo, <strong>não incluímos o ATS</strong> nesta proposta; pode ser um add-on futuro se a estratégia de
-              talento mudar.
+              O <strong>plano Business do recrutamento</strong> permite gerir vagas activas com pipeline claro —
+              página de emprego, sourcing, comunicação — sem depender de folhas paralelas quando o volume ou a urgência sobem (ainda que o ritmo médio de contratação varie ao longo do ano).
             </p>
             <ul className="space-y-2 text-[clamp(0.9rem,1.3vw,1.05rem)] opacity-90">
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> O Core cobre candidaturas e integração administrativa sem o
-                módulo de recrutamento pago
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Candidaturas integram com Core (dados e admissão) para o
+                colaborador começar com ficha consolidada no dia um
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Prioridade: operação diária, dados para o PHC e evolução do
-                talento
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> <strong>Factorial One:</strong> tokens de IA dentro do
+                ambiente Factorial (não modelo genérico externo); desconto de {ONE_DISCOUNT_PCT}% na linha de subscrição
+                dos tokens
               </li>
             </ul>
             <p className="border-t border-white/20 pt-4 text-sm opacity-70">
-              Referência interna da equipa: <strong>prazo operacional até final de junho de 2026</strong> — alinhado à
-              urgência expressa na reunião.
+              Referência interna: <strong>prazo operacional até final de junho de 2026</strong> — urgência registada na
+              reunião com a equipa.
             </p>
           </div>
         </div>
@@ -533,77 +542,85 @@ export default function ProposalFlow() {
       >
         <p className={labelCls}>10 — Investimento</p>
         <Divider light />
-        <h2 className={headCls}>
-          ROW USD
-          <br />
-          Mensal
-        </h2>
-        <Divider light />
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="space-y-3 border border-white/20 p-6 text-[clamp(0.9rem,1.25vw,1.05rem)]">
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide">Subscrição mensal</h3>
-            <div className="flex justify-between gap-2 border-b border-white/10 pb-2">
-              <span className="opacity-80">
-                {PRICING_ROW_USD.bundleName} ({SEATS} × ${PRICING_ROW_USD.listPricePerSeatPerMonth} USD)
-              </span>
-              <span className="font-medium">${PRICING_TOTALS_USD.licenseListSubtotal.toFixed(2)}/mês</span>
+          <div className="space-y-6 border border-white/20 p-6 text-[clamp(0.85rem,1.2vw,1.05rem)]">
+            {/* Licenças PEPM */}
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-widest opacity-70">Licenças (PEPM)</h3>
+              <div className="flex justify-between gap-2 border-b border-white/10 pb-2">
+                <span className="opacity-80">
+                  ${PROPOSAL_PRICING.pepmListPrice.toFixed(2)} × {SEATS} lugares
+                </span>
+                <span className="font-medium">${PRICING_TOTALS_USD.licenseListSubtotal.toFixed(2)}/mês</span>
+              </div>
+              <div className="flex justify-between gap-2 text-emerald-400">
+                <span>Desconto ({DISCOUNT_PCT}%)</span>
+                <span>
+                  −$
+                  {(PRICING_TOTALS_USD.licenseListSubtotal - PRICING_TOTALS_USD.licenseDiscountedSubtotal).toFixed(2)}
+                  /mês
+                </span>
+              </div>
+              <div className="flex justify-between gap-2 pt-1 font-medium border-t border-white/10">
+                <span className="opacity-80">Após desconto</span>
+                <span>${PRICING_TOTALS_USD.licenseDiscountedSubtotal.toFixed(2)}/mês</span>
+              </div>
             </div>
-            <div className="flex justify-between gap-2 text-emerald-400">
-              <span>Desconto comercial ({DISCOUNT_PCT}%)</span>
-              <span>
-                −$
-                {(PRICING_TOTALS_USD.licenseListSubtotal - PRICING_TOTALS_USD.licenseDiscountedSubtotal).toFixed(2)}
-                /mês
-              </span>
-            </div>
-            <div className="flex justify-between gap-2 pt-2 font-medium border-t border-white/10">
-              <span className="opacity-80">Licenças após desconto</span>
-              <span>${PRICING_TOTALS_USD.licenseDiscountedSubtotal.toFixed(2)}/mês</span>
-            </div>
-            <p className="pt-4 text-sm opacity-60">
-              Ordem de grandeza ano 1 (indicativa): licenças ~$
-              {(PRICING_TOTALS_USD.licenseDiscountedSubtotal * 12).toFixed(0)} + implementação única $
-              {PRICING_TOTALS_USD.implementationOneTime.toFixed(0)} ≈{" "}
-              <strong>
-                $
-                {(PRICING_TOTALS_USD.licenseDiscountedSubtotal * 12 + PRICING_TOTALS_USD.implementationOneTime).toFixed(
-                  0,
-                )}{" "}
-                USD
-              </strong>{" "}
-              (alinhado à conversa de ~8 000 USD/ano com desconto; valores finais no order form).
-            </p>
-          </div>
-          <div className="space-y-4">
-            <div className="border-2 border-white/30 bg-white/5 p-6 text-center">
-              <p className="mb-2 text-sm opacity-70">Total mensal estimado (só licenças)</p>
-              <p className="text-[clamp(2.5rem,8vw,4.5rem)] font-light leading-none">
-                ${PRICING_TOTALS_USD.monthlyTotal.toFixed(2)}
-              </p>
-              <p className="mt-2 text-xs opacity-50">USD · antes de impostos ou taxas se aplicável</p>
-            </div>
-            <div className="space-y-2 border border-white/20 p-5 text-sm">
-              <p className="font-semibold">Implementação (única vez)</p>
-              <p className="flex justify-between">
-                <span className="opacity-70">Lista (referência)</span>
-                <span>${PRICING_TOTALS_USD.implementationListOneTime.toFixed(0)}</span>
-              </p>
-              <p className="flex justify-between text-emerald-400">
-                <span>Desconto comercial ({DISCOUNT_PCT}%)</span>
+            {/* Recrutamento */}
+            <div className="space-y-3 border-t border-white/15 pt-4">
+              <h3 className="text-xs font-bold uppercase tracking-widest opacity-70">
+                Recrutamento ({PROPOSAL_PRICING.recruitment.tier})
+              </h3>
+              <div className="flex justify-between gap-2 border-b border-white/10 pb-2">
+                <span className="opacity-80">Lista</span>
+                <span className="font-medium">${PRICING_TOTALS_USD.recruitmentListPerMonth.toFixed(2)}/mês</span>
+              </div>
+              <div className="flex justify-between gap-2 text-emerald-400">
+                <span>Desconto ({DISCOUNT_PCT}%)</span>
                 <span>
                   −$
                   {(
-                    PRICING_TOTALS_USD.implementationListOneTime - PRICING_TOTALS_USD.implementationOneTime
-                  ).toFixed(0)}
+                    PRICING_TOTALS_USD.recruitmentListPerMonth - PRICING_TOTALS_USD.recruitmentDiscountedSubtotal
+                  ).toFixed(2)}
+                  /mês
                 </span>
+              </div>
+              <div className="flex justify-between gap-2 pt-1 font-medium border-t border-white/10">
+                <span className="opacity-80">Após desconto</span>
+                <span>${PRICING_TOTALS_USD.recruitmentDiscountedSubtotal.toFixed(2)}/mês</span>
+              </div>
+            </div>
+            {/* Factorial ONE */}
+            <div className="space-y-3 border-t border-white/15 pt-4">
+              <h3 className="text-xs font-bold uppercase tracking-widest opacity-70">Tokens Factorial One</h3>
+              <div className="flex justify-between gap-2 border-b border-white/10 pb-2">
+                <span className="opacity-80">Lista</span>
+                <span className="font-medium">${PRICING_TOTALS_USD.factorialOneListPerMonth.toFixed(2)}/mês</span>
+              </div>
+              <div className="flex justify-between gap-2 text-emerald-400">
+                <span>Desconto ({ONE_DISCOUNT_PCT}%)</span>
+                <span>
+                  −$
+                  {(
+                    PRICING_TOTALS_USD.factorialOneListPerMonth -
+                    PRICING_TOTALS_USD.factorialOneDiscountedSubtotal
+                  ).toFixed(2)}
+                  /mês
+                </span>
+              </div>
+              <div className="flex justify-between gap-2 pt-1 font-medium border-t border-white/10">
+                <span className="opacity-80">Após desconto</span>
+                <span>${PRICING_TOTALS_USD.factorialOneDiscountedSubtotal.toFixed(2)}/mês</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col space-y-4">
+            <div className="border-2 border-white/30 bg-white/5 p-6 text-center">
+              <p className="mb-2 text-sm opacity-70">Total mensal estimado</p>
+              <p className="text-[clamp(2.25rem,7vw,3.75rem)] font-light leading-none">
+                ${PRICING_TOTALS_USD.monthlyTotal.toFixed(2)}
               </p>
-              <p className="flex justify-between border-t border-white/15 pt-2 font-medium">
-                <span>O vosso preço</span>
-                <span>${PRICING_TOTALS_USD.implementationOneTime.toFixed(0)} USD</span>
-              </p>
-              <p className="pt-2 text-xs opacity-50">
-                ~1 sessão por semana com o especialista; ~1,5 meses até go-live. Âmbito final no order form.
-              </p>
+              <p className="mt-2 text-xs opacity-50">USD · valores finais no order form / impostos se aplicável</p>
             </div>
             <p className="text-sm opacity-60">Cartão ou transferência bancária em USD ou EUR, conforme acordo.</p>
             <a
@@ -716,8 +733,8 @@ export default function ProposalFlow() {
             <p className="mb-2 text-xs uppercase tracking-widest opacity-50">Durante a implementação</p>
             <h3 className="mb-3 text-lg font-semibold">Especialista de onboarding</h3>
             <p className="mb-4 text-[clamp(0.95rem,1.35vw,1.05rem)] leading-relaxed opacity-80">
-              Configuração do {PRICING_ROW_USD.bundleName}: Core, registo de horas, ausências, formações, avaliação de
-              desempenho, envolvimento e exportações orientadas ao PHC.
+              Configuração do {PROPOSAL_PRICING.bundleName}: Core, registo de horas, ausências, formações, avaliação de
+              desempenho, envolvimento, ATS {PROPOSAL_PRICING.recruitment.tier}, Factorial One e exportações orientadas ao PHC.
             </p>
             <ul className="space-y-2 text-[clamp(0.9rem,1.2vw,1rem)]">
               <li className="flex gap-2">
