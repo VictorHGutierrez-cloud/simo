@@ -724,7 +724,7 @@ export default function ProposalFlow() {
         <Divider />
         <p className={`max-w-[55ch] ${bodyCls}`}>
           Sessões semanais estruturadas para a equipa adoptar o Factorial com confiança — sem parar a operação do dia a
-          dia. A <strong>Pratique</strong> acompanha consultoria e formação no terreno; o contrato e o billing do
+          dia. A <strong>Pratiq</strong> acompanha consultoria e formação no terreno; o contrato e o billing do
           software são com a <strong>Factorial</strong>, como alinhado na sessão.
         </p>
         <Divider />

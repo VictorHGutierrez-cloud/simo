@@ -373,7 +373,7 @@ export const slides: SlideData[] = [
         <SectionLabel>Implementação</SectionLabel>
         <SlideTitle>Como entramos em produção</SlideTitle>
         <SlideSubtitle>
-          Sessões semanais estruturadas. A Pratique apoia consultoria em Moçambique; contrato e faturação do software
+          Sessões semanais estruturadas. A Pratiq apoia consultoria em Moçambique; contrato e faturação do software
           com a Factorial.
         </SlideSubtitle>
 
