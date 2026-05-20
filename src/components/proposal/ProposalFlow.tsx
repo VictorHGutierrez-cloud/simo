@@ -1,6 +1,20 @@
-import { Check, ExternalLink } from "lucide-react";
+import { ArrowDown, Check, ExternalLink } from "lucide-react";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
 import { CLIENT, PRICING_TOTALS_USD, PROPOSAL_PRICING } from "@/utils/constants";
+
+gsap.registerPlugin(ScrollToPlugin);
+
+function scrollToInvestmentSection() {
+  gsap.to(window, {
+    duration: 1.2,
+    scrollTo: { y: "#sec-investimento", autoKill: false },
+    ease: "power2.inOut",
+    onComplete: () => ScrollTrigger.refresh(),
+  });
+}
 
 const {
   seatCount: SEATS,
@@ -54,6 +68,16 @@ export default function ProposalFlow() {
           {SEATS} lugares · PEPM e recrutamento com {DISCOUNT_PCT}% · Factorial One com {ONE_DISCOUNT_PCT}% · Valores em
           USD (mensais), conforme acordo comercial
         </p>
+        <div className="mt-4">
+          <button
+            type="button"
+            onClick={scrollToInvestmentSection}
+            className="inline-flex items-center gap-2 rounded-full border-2 border-white/90 bg-white/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-[#FF355E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            Ir para investimento
+            <ArrowDown className="h-4 w-4 shrink-0" aria-hidden />
+          </button>
+        </div>
         <div className="mt-4 flex flex-wrap items-center gap-6 border-t border-white/30 pt-6">
           <div className="flex h-12 w-12 items-center justify-center border border-white/40 text-xl font-light">
             F
@@ -537,6 +561,7 @@ export default function ProposalFlow() {
 
       {/* 10 Investimento */}
       <FlowSection
+        id="sec-investimento"
         innerClassName="!justify-start gap-6"
         aria-label="Investimento"
         style={{ backgroundColor: "#0f0709", color: "#fff" }}

@@ -16,6 +16,8 @@ export interface FlowSectionProps {
   style?: React.CSSProperties;
   children: React.ReactNode;
   "aria-label"?: string;
+  /** Anchor for in-page navigation (e.g. scroll from capa to investimento). */
+  id?: string;
 }
 
 export const FlowSection: React.FC<FlowSectionProps> = ({
@@ -24,8 +26,10 @@ export const FlowSection: React.FC<FlowSectionProps> = ({
   style = {},
   children,
   "aria-label": ariaLabel,
+  id,
 }) => (
   <section
+    id={id}
     data-flow-section
     aria-label={ariaLabel}
     className={cx("relative min-h-screen w-full overflow-hidden", className)}

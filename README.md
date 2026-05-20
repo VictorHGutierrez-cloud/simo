@@ -22,8 +22,9 @@ npm run dev
 
 **Passo 5 · Abrir no browser**: o endereço aparece no terminal. Como o projeto usa o caminho base `/simo/`, abra por exemplo:
 
-- Página inicial (entrada): `http://localhost:8080/simo/`
-- Proposta em scroll (directo): `http://localhost:8080/simo/proposta`
+`http://localhost:8080/simo/`
+
+Na **capa** (primeira secção) há um botão **«Ir para investimento»** que salta para a secção 10 (Investimento).
 
 ## Gerar a versão final (build)
 
@@ -43,9 +44,7 @@ O repositório inclui [`.github/workflows/deploy.yml`](.github/workflows/deploy.
 
 **Passo 3 · Fazer push** do código para `main`. Quando o workflow ficar verde, o site estará disponível em:
 
-**https://victorhgutierrez-cloud.github.io/simo/** (entrada com botão para a proposta)
-
-**Proposta directa (mesmo conteúdo, sem passar pelo botão):** `https://victorhgutierrez-cloud.github.io/simo/proposta`
+**https://victorhgutierrez-cloud.github.io/simo/**
 
 Se vir uma página em branco, confirme que abriu o URL **com** `/simo/` no fim · o Vite está configurado com `base: "/simo/"` em [`vite.config.ts`](vite.config.ts).
 
