@@ -6,8 +6,8 @@
 export const CLIENT = {
   organizationName: "SIMO",
   seatCount: 80,
-  /** PEPM / recrutamento (lista → preço aplicado). */
-  licenseDiscountPercent: 30,
+  /** PEPM / recrutamento ATS (lista → preço aplicado). */
+  licenseDiscountPercent: 40,
   /** Tokens Factorial ONE · desconto na linha própria. */
   factorialOneDiscountPercent: 50,
 } as const;
