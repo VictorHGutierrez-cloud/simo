@@ -614,6 +614,25 @@ export default function ProposalFlow() {
                 <span>${PRICING_TOTALS_USD.factorialOneDiscountedSubtotal.toFixed(2)}/mês</span>
               </div>
             </div>
+            {/* Integração PHC e Compensação (PEPM fixo) */}
+            <div className="space-y-3 border-t border-white/15 pt-4">
+              <h3 className="text-xs font-bold uppercase tracking-widest opacity-70">Integração com PHC</h3>
+              <div className="flex justify-between gap-2 pt-1 font-medium border-t border-white/10">
+                <span className="opacity-80">
+                  ${PROPOSAL_PRICING.phcIntegrationPerSeatUsd.toFixed(2)} × {SEATS} lugares
+                </span>
+                <span>${PRICING_TOTALS_USD.phcIntegrationMonthly.toFixed(2)}/mês</span>
+              </div>
+            </div>
+            <div className="space-y-3 border-t border-white/15 pt-4">
+              <h3 className="text-xs font-bold uppercase tracking-widest opacity-70">Funcionalidade Compensação</h3>
+              <div className="flex justify-between gap-2 pt-1 font-medium border-t border-white/10">
+                <span className="opacity-80">
+                  ${PROPOSAL_PRICING.compensationPerSeatUsd.toFixed(2)} × {SEATS} lugares
+                </span>
+                <span>${PRICING_TOTALS_USD.compensationMonthly.toFixed(2)}/mês</span>
+              </div>
+            </div>
           </div>
           <div className="flex flex-col space-y-4">
             <div className="border-2 border-white/30 bg-white/5 p-6 text-center">

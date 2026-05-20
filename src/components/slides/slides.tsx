@@ -349,6 +349,26 @@ export const slides: SlideData[] = [
               <span>Total</span>
               <span>${PRICING_TOTALS_USD.factorialOneDiscountedSubtotal.toFixed(2)}/mês</span>
             </div>
+
+            <h3 className="text-[15px] font-medium opacity-90 mb-2 pt-3 border-t border-foreground/10">
+              Integração PHC
+            </h3>
+            <div className="flex justify-between gap-2 border-t border-foreground/15 pt-2 font-medium">
+              <span className="opacity-65">
+                ${PROPOSAL_PRICING.phcIntegrationPerSeatUsd} × {SEATS}
+              </span>
+              <span>${PRICING_TOTALS_USD.phcIntegrationMonthly.toFixed(2)}/mês</span>
+            </div>
+
+            <h3 className="text-[15px] font-medium opacity-90 mb-2 pt-3 border-t border-foreground/10">
+              Compensação
+            </h3>
+            <div className="flex justify-between gap-2 border-t border-foreground/15 pt-2 font-medium">
+              <span className="opacity-65">
+                ${PROPOSAL_PRICING.compensationPerSeatUsd} × {SEATS}
+              </span>
+              <span>${PRICING_TOTALS_USD.compensationMonthly.toFixed(2)}/mês</span>
+            </div>
           </div>
 
           <div className="space-y-4">

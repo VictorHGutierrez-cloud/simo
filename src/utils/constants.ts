@@ -21,6 +21,10 @@ const DOne = CLIENT.factorialOneDiscountPercent / 100;
 export const PROPOSAL_PRICING = {
   bundleName: "Essentials PRO",
   pepmListPrice: 5.9,
+  /** USD por colaborador / mês · integração com PHC. */
+  phcIntegrationPerSeatUsd: 2,
+  /** USD por colaborador / mês · funcionalidade Compensação. */
+  compensationPerSeatUsd: 1.2,
   recruitment: {
     tier: "Business" as const,
     listPricePerMonth: 65.9,
@@ -39,6 +43,11 @@ const recruitmentDiscounted = recruitmentList * (1 - DLicense);
 const factorialOneList = PROPOSAL_PRICING.factorialOneTokens.listPricePerMonth;
 const factorialOneDiscounted = factorialOneList * (1 - DOne);
 
+const phcIntegrationMonthly =
+  CLIENT.seatCount * PROPOSAL_PRICING.phcIntegrationPerSeatUsd;
+const compensationMonthly =
+  CLIENT.seatCount * PROPOSAL_PRICING.compensationPerSeatUsd;
+
 export const PRICING_TOTALS_USD = {
   licenseListSubtotal: licenseList,
   licenseDiscountedSubtotal: licenseDiscounted,
@@ -46,8 +55,15 @@ export const PRICING_TOTALS_USD = {
   recruitmentDiscountedSubtotal: recruitmentDiscounted,
   factorialOneListPerMonth: factorialOneList,
   factorialOneDiscountedSubtotal: factorialOneDiscounted,
-  /** Licenças + ATS + Factorial ONE (tudo com os descontos indicados na proposta). */
-  monthlyTotal: licenseDiscounted + recruitmentDiscounted + factorialOneDiscounted,
+  phcIntegrationMonthly,
+  compensationMonthly,
+  /** Licenças + ATS + Factorial ONE (descontos) + PHC + Compensação (PEPM fixo). */
+  monthlyTotal:
+    licenseDiscounted +
+    recruitmentDiscounted +
+    factorialOneDiscounted +
+    phcIntegrationMonthly +
+    compensationMonthly,
 } as const;
 
 const effectivePepm = PRICING_TOTALS_USD.monthlyTotal / CLIENT.seatCount;

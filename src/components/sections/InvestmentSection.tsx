@@ -18,10 +18,10 @@ const InvestmentSection = () => {
         <p className="text-2xl md:text-3xl font-light mb-4 max-w-2xl">Resumo comercial · {CLIENT.organizationName}</p>
         <p className="text-sm opacity-50 mb-10 max-w-xl">
           PEPM ${PROPOSAL_PRICING.pepmListPrice} × {CLIENT.seatCount} lugares ({CLIENT.licenseDiscountPercent}% off) ·
-          Recrutamento {PROPOSAL_PRICING.recruitment.tier} ({CLIENT.licenseDiscountPercent}% off) · Factorial One ({CLIENT.factorialOneDiscountPercent}% off) · valores em USD mensais conforme esta proposta
+          Recrutamento {PROPOSAL_PRICING.recruitment.tier} ({CLIENT.licenseDiscountPercent}% off) · Factorial One ({CLIENT.factorialOneDiscountPercent}% off) · integração PHC (${PROPOSAL_PRICING.phcIntegrationPerSeatUsd} × {CLIENT.seatCount}) · Compensação (${PROPOSAL_PRICING.compensationPerSeatUsd} × {CLIENT.seatCount}) · valores em USD mensais conforme esta proposta
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           <SummaryCard
             label="Licenças (após desconto)"
             value={`${formatUSD(PRICING_TOTALS_USD.licenseDiscountedSubtotal)}/mês`}
@@ -30,6 +30,14 @@ const InvestmentSection = () => {
           <SummaryCard
             label="Factorial One (após desconto)"
             value={`${formatUSD(PRICING_TOTALS_USD.factorialOneDiscountedSubtotal)}/mês`}
+          />
+          <SummaryCard
+            label="Integração PHC"
+            value={`${formatUSD(PRICING_TOTALS_USD.phcIntegrationMonthly)}/mês`}
+          />
+          <SummaryCard
+            label="Compensação"
+            value={`${formatUSD(PRICING_TOTALS_USD.compensationMonthly)}/mês`}
           />
           <SummaryCard
             label="Total mensal"
@@ -82,6 +90,22 @@ const InvestmentSection = () => {
               <div className="flex justify-between border-t border-foreground/10 pt-3 font-medium">
                 <span>Após desconto</span>
                 <span>{formatUSD(PRICING_TOTALS_USD.factorialOneDiscountedSubtotal)}/mês</span>
+              </div>
+
+              <p className="font-medium opacity-90 pt-4">Integração com PHC</p>
+              <div className="flex justify-between border-t border-foreground/10 pt-3 font-medium">
+                <span className="opacity-60">
+                  {formatUSD(PROPOSAL_PRICING.phcIntegrationPerSeatUsd)} × {CLIENT.seatCount} lugares
+                </span>
+                <span>{formatUSD(PRICING_TOTALS_USD.phcIntegrationMonthly)}/mês</span>
+              </div>
+
+              <p className="font-medium opacity-90 pt-4">Funcionalidade Compensação</p>
+              <div className="flex justify-between border-t border-foreground/10 pt-3 font-medium">
+                <span className="opacity-60">
+                  {formatUSD(PROPOSAL_PRICING.compensationPerSeatUsd)} × {CLIENT.seatCount} lugares
+                </span>
+                <span>{formatUSD(PRICING_TOTALS_USD.compensationMonthly)}/mês</span>
               </div>
 
               <div className="flex justify-between border-t border-foreground/20 pt-4 text-base font-medium">
