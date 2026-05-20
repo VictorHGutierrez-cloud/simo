@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ficheiros internos / não públicos (não enviar para o GitHub)
+SIMOtranscription.txt
+✅  Feature Map - Source of Truth - Internal use for Cx & Sales.xlsx
+ROW USD Prices.xlsx
+core.txt
+therighteousfoundation.txt
+novaideia.MD

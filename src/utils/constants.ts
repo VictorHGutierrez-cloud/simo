@@ -1,54 +1,45 @@
 /**
- * Righteous Foundation — commercial proposal constants (ROW USD, monthly).
- * Source: ROW USD Prices.xlsx + discovery call requirements.
+ * SIMO — proposta comercial (ROW USD, mensal).
+ * Fonte: ROW USD Prices.xlsx + descoberta (call).
  */
 
 export const CLIENT = {
-  organizationName: "Righteous Foundation",
-  seatCount: 35,
-  /** Nonprofit: 50% discount on licenses, recruitment list price, and implementation list price. */
-  licenseDiscountPercent: 50,
+  organizationName: "SIMO",
+  seatCount: 80,
+  /** Desconto acordado sobre licenças e implementação (lista ROW). */
+  licenseDiscountPercent: 30,
 } as const;
 
 const D = CLIENT.licenseDiscountPercent / 100;
 
-/** Starter Planning: Core + Time Tracking + Time Off + Shifts (Enterprise tier, monthly ROW USD). */
+/**
+ * Essentials PRO (Enterprise): Starter Essentials + Performance + Engagement.
+ * Cobertura: Core, Time Tracking, Time Off, Trainings, Performance, Engagement.
+ */
 export const PRICING_ROW_USD = {
-  bundleName: "Starter Planning",
-  listPricePerSeatPerMonth: 7.5,
-  recruitment: {
-    tier: "5 Active Jobs",
-    /** ROW list price before nonprofit discount. */
-    listPricePerMonth: 89,
-  },
+  bundleName: "Essentials PRO",
+  listPricePerSeatPerMonth: 10.5,
   implementation: {
-    /** Reference list before nonprofit discount (for transparency). */
     listPriceOneTime: 500,
-    /** Agreed nonprofit implementation fee (50% off list). Delivery: 1h/week sessions with Onboarding Specialist, ~1.5 months to go-live. */
-    discountedOneTime: 250,
+    discountedOneTime: 350,
   },
 } as const;
 
 const licenseList = CLIENT.seatCount * PRICING_ROW_USD.listPricePerSeatPerMonth;
 const licenseDiscounted = licenseList * (1 - D);
 
-const recruitmentList = PRICING_ROW_USD.recruitment.listPricePerMonth;
-const recruitmentDiscounted = recruitmentList * (1 - D);
-
 export const PRICING_TOTALS_USD = {
   licenseListSubtotal: licenseList,
   licenseDiscountedSubtotal: licenseDiscounted,
-  recruitmentListPerMonth: recruitmentList,
-  recruitmentDiscountedSubtotal: recruitmentDiscounted,
-  /** Licenses (discounted) + recruitment (discounted). */
-  monthlyTotal: licenseDiscounted + recruitmentDiscounted,
+  /** Apenas licenças (sem recrutamento nesta fase). */
+  monthlyTotal: licenseDiscounted,
   implementationListOneTime: PRICING_ROW_USD.implementation.listPriceOneTime,
   implementationOneTime: PRICING_ROW_USD.implementation.discountedOneTime,
 } as const;
 
 export const DEFAULT_VALUES = {
   empresa: CLIENT.organizationName,
-  contacto: "Righteous Foundation — HR team",
+  contacto: "SIMO — equipa de RH",
   totalColaboradoresInternos: CLIENT.seatCount,
   totalColaboradoresExternos: 0,
   custoColaboradorMes_USD: PRICING_ROW_USD.listPricePerSeatPerMonth,

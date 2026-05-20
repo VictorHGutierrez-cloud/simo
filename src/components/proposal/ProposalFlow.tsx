@@ -25,28 +25,28 @@ const cardBodyCls = "text-[clamp(0.9rem,1.4vw,1.15rem)] leading-relaxed opacity-
 
 export default function ProposalFlow() {
   return (
-    <FlowArt aria-label={`Factorial proposal for ${ORG}`}>
-      {/* 01 Cover */}
-      <FlowSection aria-label="Cover" style={{ backgroundColor: "#FF355E", color: "#fff" }}>
-        <p className={labelCls}>01 — Factorial proposal</p>
+    <FlowArt aria-label={`Proposta Factorial para ${ORG}`}>
+      {/* 01 Capa */}
+      <FlowSection aria-label="Capa" style={{ backgroundColor: "#FF355E", color: "#fff" }}>
+        <p className={labelCls}>01 — Proposta Factorial</p>
         <Divider light />
         <div>
           <h1 className={headCls}>
             {ORG}
             <br />
-            HR
+            RH
             <br />
-            Reimagined
+            Unificado
           </h1>
         </div>
         <Divider light />
         <p className={`mt-auto max-w-[55ch] ${bodyCls}`}>
-          Starter Planning (Enterprise) plus Recruitment — one integrated workspace: Core, attendance, time off,
-          shifts, and hiring for your distributed team.
+          {PRICING_ROW_USD.bundleName} (Enterprise) — um espaço integrado para Core, registo de horas, ausências,
+          formações, avaliação de desempenho e envolvimento, com ligação limpa ao PHC para a folha de retribuição.
         </p>
         <p className={`text-[clamp(0.85rem,1.3vw,1rem)] opacity-80`}>
-          {SEATS} seats · ROW USD (monthly) · {DISCOUNT_PCT}% nonprofit discount (licenses, recruitment,
-          implementation) · Recruitment: {PRICING_ROW_USD.recruitment.tier}
+          {SEATS} lugares · ROW USD (mensal) · {DISCOUNT_PCT}% de desconto comercial (licenças e implementação) · Sem
+          módulo de recrutamento na fase 1
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-6 border-t border-white/30 pt-6">
           <div className="flex h-12 w-12 items-center justify-center border border-white/40 text-xl font-light">
@@ -54,65 +54,68 @@ export default function ProposalFlow() {
           </div>
           <div>
             <p className="text-[clamp(1rem,1.5vw,1.2rem)] font-medium">Victor Gutierrez</p>
-            <p className="text-sm opacity-70">Business Development · Factorial</p>
+            <p className="text-sm opacity-70">Desenvolvimento de negócio · Factorial</p>
           </div>
         </div>
       </FlowSection>
 
-      {/* 02 Context */}
+      {/* 02 Contexto */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="Context"
+        aria-label="Contexto"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>02 — Context</p>
+        <p className={labelCls}>02 — Contexto</p>
         <Divider />
         <h2 className={headCls}>
-          Why a new
+          Porquê um novo
           <br />
-          HR system
+          sistema de RH
         </h2>
         <Divider />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className={`space-y-6 ${bodyCls}`}>
             <p>
-              Your team works <strong className="font-semibold">across the country, mostly remote</strong>. The
-              previous HR tool had a <strong className="font-semibold">weak mobile experience</strong>, and key
-              workflows — especially <strong className="font-semibold">reports and attendance</strong> — were
-              unreliable.
+              Hoje a avaliação de desempenho assenta em <strong className="font-semibold">folhas Excel</strong>, sem
+              histórico estruturado de carreira. Querem começar de forma gradual (180°, evoluir depois para 360°) e{" "}
+              <strong className="font-semibold">automatizar o processo</strong>.
             </p>
             <p>
-              You moved to <strong className="font-semibold">manual processes</strong> to keep control, but that
-              creates extra work and errors when managers and Finance need trustworthy records.
+              O registo de colaboradores é <strong className="font-semibold">em papel</strong>, as assinaturas são
+              físicas e a equipa de RH faz a <strong className="font-semibold">baixa manual</strong> no PHC. O registo
+              de horas, férias e ausências também é <strong className="font-semibold">manual</strong>, o que torna a
+              conciliação com a folha mais lenta e pouco eficaz.
             </p>
             <p>
-              As a <strong className="font-semibold">registered nonprofit</strong>, this proposal applies{" "}
-              <strong className="font-semibold">{DISCOUNT_PCT}%</strong> to{" "}
-              <strong className="font-semibold">licenses</strong>, <strong className="font-semibold">recruitment</strong>
-              , and <strong className="font-semibold">implementation</strong>.
+              Com cerca de <strong className="font-semibold">dois técnicos de RH</strong> para ~80 colaboradores, é
+              preciso <strong className="font-semibold">self-service</strong> para colaboradores e gestores, e dados
+              fiáveis para o financeiro. Esta proposta aplica{" "}
+              <strong className="font-semibold">{DISCOUNT_PCT}%</strong> de desconto comercial sobre{" "}
+              <strong className="font-semibold">licenças</strong> e{" "}
+              <strong className="font-semibold">implementação</strong> (lista ROW).
             </p>
           </div>
           <div className="flex flex-col gap-4">
             {[
               {
                 icon: "📱",
-                title: "Mobile-first",
-                desc: "Clock in/out, request time off, sign documents, and complete tasks from the Factorial app.",
+                title: "Mobile em primeiro lugar",
+                desc: "Picagem, pedidos de ausência, assinaturas e tarefas na app Factorial — menos papel e menos e-mail.",
               },
               {
                 icon: "🧾",
-                title: "Complete records",
-                desc: "Timesheets, attendance dashboards, and HR exports with the fields managers and Finance need.",
+                title: "Dados completos",
+                desc: "Folhas de horas, painéis e exportações com os campos que o RH e o financeiro precisam para o PHC.",
               },
               {
                 icon: "🌍",
-                title: "One system",
-                desc: "Employee data, shifts, absences, and documents in a single place — not spreadsheets.",
+                title: "Um só sistema",
+                desc: "Ficha, presenças, ausências e documentos no mesmo sítio — não dispersos em folhas Excel.",
               },
               {
                 icon: "🤝",
-                title: "Nonprofit pricing",
-                desc: `${DISCOUNT_PCT}% discount on licenses, recruitment, and implementation.`,
+                title: "Preço acordo",
+                desc: `${DISCOUNT_PCT}% de desconto comercial nas licenças e na implementação, alinhado com a conversa com a equipa.`,
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 border border-black/15 bg-white/50 p-4">
@@ -127,56 +130,57 @@ export default function ProposalFlow() {
         </div>
       </FlowSection>
 
-      {/* 03 Priorities */}
+      {/* 03 Prioridades */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="What you asked for"
+        aria-label="O que pediram"
         style={{ backgroundColor: "hsl(347 50% 18%)", color: "#fff" }}
       >
-        <p className={labelCls}>03 — What you asked for</p>
+        <p className={labelCls}>03 — O que pediram</p>
         <Divider light />
         <h2 className={headCls}>
-          Core HR
+          RH de ponta
           <br />
-          First
+          a ponta
         </h2>
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Employee records and documents, reliable remote attendance, time off, shift planning, hiring (~3–5 open
-          roles), and clean data handoff to your payroll provider.
+          Ficha e documentos digitais, registo de horas e ausências com aprovações, formações (LMS), avaliação de
+          desempenho e envolvimento — e exportação estruturada para o <strong>PHC</strong>, que continua a processar a
+          folha de retribuição.
         </p>
         <Divider light />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               icon: "👤",
-              title: "Core HR",
-              desc: "Directory, contracts, org chart, permissions, cloud documents, e-signatures, onboarding workflows.",
+              title: "Core",
+              desc: "Diretório, contratos, organograma, permissões, documentos na nuvem, assinaturas e fluxos de admissão.",
             },
             {
               icon: "⏱️",
-              title: "Time tracking",
-              desc: "Mobile clock-in/out with geolocation, timesheet approval, real-time attendance, exports.",
-            },
-            {
-              icon: "📅",
-              title: "Shifts",
-              desc: "Bulk shifts, templates, breaks, conflict warnings, mobile schedule review.",
+              title: "Registo de horas",
+              desc: "Picagem na app e na web, geolocalização, aprovação de folhas de horas, exportações.",
             },
             {
               icon: "🏖️",
-              title: "Time off",
-              desc: "Requests and approvals on web and app; policies, balances, calendars, attachments.",
+              title: "Ausências",
+              desc: "Pedidos e aprovações; políticas, saldos, calendários e anexos.",
             },
             {
-              icon: "📣",
-              title: "Recruitment",
-              desc: "Career page, pipeline, Indeed/LinkedIn, email and WhatsApp — ~5 active jobs.",
+              icon: "📈",
+              title: "Avaliação de desempenho",
+              desc: "Ciclos 180° (e 360° mais tarde), Ninebox, planos de ação e Factorial One (IA no ambiente Factorial).",
             },
             {
-              icon: "💸",
-              title: "Payroll handoff",
-              desc: "Factorial does not run local payroll here — it centralizes data your partner can use.",
+              icon: "🎓",
+              title: "Formações",
+              desc: "LMS / e-learning: catálogo, conteúdos, testes e ligação a planos de desenvolvimento.",
+            },
+            {
+              icon: "💬",
+              title: "Envolvimento",
+              desc: "Inquéritos (clima, NPS), rituais de feedback e acompanhamento das equipas.",
             },
           ].map((f) => (
             <div key={f.title} className="border border-white/20 p-4">
@@ -188,13 +192,13 @@ export default function ProposalFlow() {
         </div>
       </FlowSection>
 
-      {/* 04 Package */}
+      {/* 04 Pacote */}
       <FlowSection
         innerClassName="!justify-start gap-6"
-        aria-label="Recommended package"
+        aria-label="Pacote recomendado"
         style={{ backgroundColor: "#0f0709", color: "#fff" }}
       >
-        <p className={labelCls}>04 — Recommended package</p>
+        <p className={labelCls}>04 — Pacote recomendado</p>
         <Divider light />
         <h2 className={headCls}>
           {PRICING_ROW_USD.bundleName}
@@ -203,90 +207,91 @@ export default function ProposalFlow() {
         </h2>
         <Divider light />
         <p className={`max-w-[60ch] ${bodyCls}`}>
-          One monthly package for {SEATS} employees: <strong>Core</strong>, <strong>Time Tracking</strong>,{" "}
-          <strong>Time Off</strong>, and <strong>Shifts</strong> — list{" "}
-          <strong>${PRICING_ROW_USD.listPricePerSeatPerMonth}/seat/month</strong> before your nonprofit discount.
+          Uma subscrição mensal para <strong>{SEATS}</strong> colaboradores: <strong>Core</strong>,{" "}
+          <strong>registo de horas</strong>, <strong>ausências</strong>, <strong>formações</strong>,{" "}
+          <strong>Performance</strong> e <strong>Engagement</strong> — preço de lista{" "}
+          <strong>${PRICING_ROW_USD.listPricePerSeatPerMonth} USD/lugar/mês</strong> antes do desconto comercial.
         </p>
         <Divider light />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6 border border-white/20 p-6">
-            <h3 className="text-lg font-bold uppercase tracking-wide">In the bundle</h3>
+            <h3 className="text-lg font-bold uppercase tracking-wide">No bundle</h3>
             <div className="space-y-4 text-[clamp(0.9rem,1.3vw,1.05rem)] opacity-90">
               <div>
                 <p className="mb-2 font-semibold text-white">Core</p>
                 <ul className="space-y-2">
                   <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Directory, contracts, org chart, teams
-                    & permissions
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Diretório, contratos, organograma, equipas
+                    e permissões
                   </li>
                   <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Cloud documents, bulk send, legally valid
-                    e-signatures
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Documentos na nuvem, envio em massa,
+                    assinaturas com valor jurídico
                   </li>
                   <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Onboarding/offboarding with tasks and file
-                    collection
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Admissão e saída com tarefas e recolha de
+                    ficheiros
                   </li>
                   <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> HR and custom reports; payroll-ready
-                    change exports
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold text-white">Time tracking & shifts</p>
-                <ul className="space-y-2">
-                  <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Clock-in/out on mobile and web; geolocation;
-                    optional location alerts
-                  </li>
-                  <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Timesheet approval; live attendance
-                    dashboard; Excel/PDF exports
-                  </li>
-                  <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Overtime rules, bank of hours, shift
-                    planning with conflict warnings
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Relatórios e exportações preparadas para o
+                    ciclo de folha (PHC)
                   </li>
                 </ul>
               </div>
               <div>
-                <p className="mb-2 font-semibold text-white">Time off</p>
+                <p className="mb-2 font-semibold text-white">Registo de horas e ausências</p>
                 <ul className="space-y-2">
                   <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Requests and approvals; policy-based
-                    balances
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Picagem na app e na web; geolocalização
                   </li>
                   <li className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Team calendars; multi-level approvals;
-                    document attachments
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Aprovação de folhas de horas; exportações
+                    Excel/PDF
+                  </li>
+                  <li className="flex gap-2">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Pedidos de ausência, saldos e calendários de
+                    equipa
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="mb-2 font-semibold text-white">Formações, desempenho e envolvimento</p>
+                <ul className="space-y-2">
+                  <li className="flex gap-2">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> LMS: catálogo, consumo, testes e rastreio
+                  </li>
+                  <li className="flex gap-2">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Ciclos de avaliação, matriz Ninebox e planos
+                    de ação
+                  </li>
+                  <li className="flex gap-2">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 opacity-80" /> Inquéritos e rituais de feedback para
+                    acompanhar o clima
                   </li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="space-y-4 border border-white/20 p-6">
-            <h3 className="text-lg font-bold uppercase tracking-wide">Recruitment add-on</h3>
+            <h3 className="text-lg font-bold uppercase tracking-wide">Fase 1 · Sem recrutamento</h3>
             <p className={`${bodyCls} opacity-90`}>
-              <strong>{PRICING_ROW_USD.recruitment.tier}</strong> — ATS for typical hiring volume (~3–5 open roles).
+              O volume de contratações é modesto (ordem de <strong>duas admissões por ano</strong>). Por simplicidade e
+              custo, <strong>não incluímos o ATS</strong> nesta proposta; pode ser um add-on futuro se a estratégia de
+              talento mudar.
             </p>
             <ul className="space-y-2 text-[clamp(0.9rem,1.3vw,1.05rem)] opacity-90">
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Branded career page and customizable hiring stages
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> O Core cobre candidaturas e integração administrativa sem o
+                módulo de recrutamento pago
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Indeed and LinkedIn; one candidate pipeline
-              </li>
-              <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Email and WhatsApp; notes and feedback per profile
-              </li>
-              <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Hires flow into Core onboarding (data, documents, tasks)
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Prioridade: operação diária, dados para o PHC e evolução do
+                talento
               </li>
             </ul>
             <p className="border-t border-white/20 pt-4 text-sm opacity-70">
-              List <strong>${PRICING_TOTALS_USD.recruitmentListPerMonth}/mo</strong> → nonprofit:{" "}
-              <strong>${PRICING_TOTALS_USD.recruitmentDiscountedSubtotal.toFixed(2)}/mo</strong>
+              Referência interna da equipa: <strong>prazo operacional até final de junho de 2026</strong> — alinhado à
+              urgência expressa na reunião.
             </p>
           </div>
         </div>
@@ -295,35 +300,35 @@ export default function ProposalFlow() {
       {/* 05 Mobile */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="Mobile experience"
+        aria-label="Experiência móvel"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>05 — Mobile experience</p>
+        <p className={labelCls}>05 — Experiência móvel</p>
         <Divider />
         <h2 className={headCls}>
-          Built for
+          Feito para o
           <br />
-          Phones
+          telemóvel
         </h2>
         <Divider />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Remote employees use the Factorial app for daily HR: clock in/out with geolocation, request time off, sign
-          documents, and complete onboarding tasks from one inbox.
+          Os colaboradores usam a app Factorial no dia a dia: picagem com contexto de localização, pedidos de
+          ausência, assinaturas e tarefas de admissão — tudo a partir de uma única caixa de entrada.
         </p>
         <Divider />
         <div className="flex flex-wrap gap-[3vw]">
           {[
             {
-              title: "One login, roles",
-              desc: "HR sees everything; managers approve their scope; employees see only their data — no extra license types.",
+              title: "Um login, vários papéis",
+              desc: "O RH vê tudo; os gestores aprovam na sua área; cada colaborador só vê o que lhe diz respeito.",
             },
             {
-              title: "Tasks in one inbox",
-              desc: "Signatures, time-off reviews, uploads, and onboarding steps as actionable mobile tasks.",
+              title: "Tarefas num só sítio",
+              desc: "Assinaturas, revisões de ausências, uploads e passos de admissão como tarefas na app.",
             },
             {
-              title: "Location-aware",
-              desc: "Work locations per employee; optional geofencing alerts when you need stricter validation.",
+              title: "Segurança de acesso",
+              desc: "Camadas de SSO e registo de auditoria — útil quando partilham postos de trabalho e para IT avaliar risco.",
             },
           ].map((x) => (
             <div key={x.title} className="min-w-[200px] flex-1 border border-black/15 bg-white/60 p-5">
@@ -334,46 +339,46 @@ export default function ProposalFlow() {
         </div>
       </FlowSection>
 
-      {/* 06 Attendance */}
+      {/* 06 Operações */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="Attendance and reporting"
+        aria-label="Operações e folha"
         style={{ backgroundColor: "hsl(347 50% 18%)", color: "#fff" }}
       >
-        <p className={labelCls}>06 — Operations</p>
+        <p className={labelCls}>06 — Operações</p>
         <Divider light />
         <h2 className={headCls}>
-          Attendance
+          Horas e
           <br />
-          You trust
+          ausências
         </h2>
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Validated timesheets, live attendance visibility, and exports your Finance team can use — not half-empty
-          reports.
+          Folhas de horas validadas, visibilidade em tempo real e exportações que o financeiro pode cruzar com o PHC —
+          menos reconciliação manual no fecho.
         </p>
         <Divider light />
         <div className="grid gap-4 sm:grid-cols-2">
           {[
             {
-              icon: "📅",
-              title: "Shifts linked to attendance",
-              desc: "Templates, bulk edits, breaks, conflicts, absences aligned with the schedule.",
-            },
-            {
               icon: "📥",
-              title: "Timesheets & exports",
-              desc: "Approval, autofill where configured, detailed Excel/PDF exports.",
+              title: "Folhas de horas e exportações",
+              desc: "Aprovação, regras onde estiverem configuradas, Excel/PDF com o detalhe necessário para o PHC.",
             },
             {
               icon: "📊",
-              title: "Live attendance",
-              desc: "Who clocked in, who is missing, location, breaks — in real time.",
+              title: "Painel de presenças",
+              desc: "Quem picou, quem falta, pausas — em tempo real para gestão e RH.",
+            },
+            {
+              icon: "🏖️",
+              title: "Ausências alinhadas",
+              desc: "Férias e outras ausências com trilho de aprovação e impacto visível nas equipas.",
             },
             {
               icon: "⏱️",
-              title: "Overtime & bank",
-              desc: "Rules for overtime and special hours; balance extra time with your policies.",
+              title: "Horas extraordinárias",
+              desc: "Regras de HE e banco de horas, conforme política — suporte ao cálculo correto no processamento.",
             },
           ].map((f) => (
             <div key={f.title} className="flex gap-4 border border-white/20 p-4">
@@ -387,33 +392,33 @@ export default function ProposalFlow() {
         </div>
       </FlowSection>
 
-      {/* 07 Documents */}
+      {/* 07 Documentos */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="Documents and onboarding"
+        aria-label="Documentos e admissão"
         style={{ backgroundColor: "#0f0709", color: "#fff" }}
       >
-        <p className={labelCls}>07 — Documents & onboarding</p>
+        <p className={labelCls}>07 — Documentos e admissão</p>
         <Divider light />
         <h2 className={headCls}>
-          Sign &
+          Assinar &
           <br />
-          Onboard
+          integrar
         </h2>
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Centralize HR files, collect legally valid e-signatures, and run structured onboarding so new hires submit IDs
-          and complete tasks without email chaos.
+          Centralizar ficheiros de RH, recolher assinaturas válidas e conduzir admissões com tarefas — em vez de
+          processos apenas em papel e arquivo físico.
         </p>
         <Divider light />
         <div className="grid gap-8 lg:grid-cols-2">
           <ul className="space-y-3 text-[clamp(0.9rem,1.3vw,1.05rem)]">
             {[
-              "Employee directory, contracts, and org chart in one workspace",
-              "Send, sign, and track documents in bulk (desktop and mobile)",
-              "Guided onboarding/offboarding workflows with assigned tasks",
-              "Super-task to collect IDs and files into the right folders",
-              "Custom roles and permissions — control who sees and approves what",
+              "Diretório, contratos e organograma num único espaço de trabalho",
+              "Enviar, assinar e acompanhar documentos em massa (web e app)",
+              "Fluxos de admissão e saída com tarefas atribuídas",
+              "Recolha estruturada de documentos de identificação nas pastas certas",
+              "Funções e permissões — controlar quem vê o quê",
             ].map((t) => (
               <li key={t} className="flex gap-3 border border-white/15 p-3">
                 <Check className="mt-1 h-4 w-4 shrink-0 opacity-80" />
@@ -422,47 +427,49 @@ export default function ProposalFlow() {
             ))}
           </ul>
           <div className="border border-white/20 p-6">
-            <h3 className="text-lg font-semibold mb-3">From offer accepted to day one</h3>
+            <h3 className="text-lg font-semibold mb-3">Do aceitar a oferta ao primeiro dia</h3>
             <p className="text-[clamp(0.95rem,1.35vw,1.1rem)] opacity-80 leading-relaxed">
-              After you hire in Recruitment, onboarding continues in Core: offer and personal data, signatures, and
-              uploads — so the employee can clock in and request time off on day one.
+              Depois da seleção interna, a admissão continua no Core: dados pessoais, assinaturas e anexos — para o
+              colaborador poder picar e pedir ausências desde o primeiro dia, com menos trabalho repetitivo para o RH.
             </p>
           </div>
         </div>
       </FlowSection>
 
-      {/* 08 Recruitment */}
+      {/* 08 Pessoas & desenvolvimento */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="Recruitment"
+        aria-label="Desempenho formações envolvimento"
         style={{ backgroundColor: "#07A2AD", color: "#fff" }}
       >
-        <p className={labelCls}>08 — Talent acquisition</p>
+        <p className={labelCls}>08 — Desempenho, formações e envolvimento</p>
         <Divider light />
         <h2 className={headCls}>
-          Hire
+          Talentos
           <br />
-          Smarter
+          em evolução
         </h2>
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Publish roles, manage candidates in one ATS, and reach people on Indeed, LinkedIn, email, or WhatsApp —
-          sized for about five active jobs at a time.
+          Substituir as folhas Excel por ciclos de avaliação, ligar o desempenho a planos de ação e formar na mesma
+          plataforma (LMS). O Factorial One permanece{" "}
+          <strong>dentro do ambiente Factorial</strong> — útil quando a instituição se preocupa com confidencialidade e
+          uso de IA genérica.
         </p>
         <Divider light />
         <div className="flex flex-wrap gap-[3vw]">
           {[
             {
-              title: "Career page",
-              desc: "Branded careers URL, customizable application forms, job catalog aligned with your teams.",
+              title: "Avaliação de desempenho",
+              desc: "Modelos 180°, competências por cargo, Ninebox, feedback e planos de ação partilhados entre colaborador e gestor.",
             },
             {
-              title: "Indeed & LinkedIn",
-              desc: "One pipeline with tags, notes, and hiring stages managers can follow.",
+              title: "Formações (LMS)",
+              desc: "Catálogo, vídeos e PDFs, testes de conhecimento e pedidos de formação — inclusive a partir do PDI.",
             },
             {
-              title: "Communication",
-              desc: "Email from Factorial, WhatsApp outreach, hiring metrics (time-to-hire, sources, funnel).",
+              title: "Envolvimento",
+              desc: "Inquéritos de clima e NPS para acompanhar sentimento e priorizar ações no RH.",
             },
           ].map((x) => (
             <div key={x.title} className="min-w-[200px] flex-1 border border-white/30 bg-black/10 p-5">
@@ -473,115 +480,116 @@ export default function ProposalFlow() {
         </div>
       </FlowSection>
 
-      {/* 09 Payroll */}
+      {/* 09 PHC */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="Finance and payroll handoff"
+        aria-label="PHC e folha"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>09 — Finance handoff</p>
+        <p className={labelCls}>09 — PHC e folha de retribuição</p>
         <Divider />
         <h2 className={headCls}>
-          Payroll
+          Factorial
           <br />
-          Partner
+          e PHC
         </h2>
         <Divider />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Factorial prepares payroll inputs — your payroll partner runs payroll. If you need fully processed payslips
-          inside one system, we position as an HR hub alongside a payroll provider.
+          A Factorial prepara e ordena os dados de RH; o <strong>PHC</strong> continua a processar a folha de
+          retribuição e a emitir recibos de vencimento. O objectivo é retirar o retrabalho manual de conciliação —
+          contratos, horas, ausências e eventos passam a ter histórico estruturado.
         </p>
         <Divider />
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="border border-black/15 bg-white/70 p-6">
-            <h3 className="mb-3 font-bold uppercase tracking-wide text-sm">What Factorial covers</h3>
+            <h3 className="mb-3 text-sm font-bold uppercase tracking-wide">O que a Factorial cobre</h3>
             <ul className={`space-y-2 ${cardBodyCls}`}>
-              <li>• Contract and employee updates that affect payroll</li>
-              <li>• Time tracking, absences, overtime, bank-of-hours outputs</li>
-              <li>• Guided payroll cycle collaboration and exports</li>
-              <li>• Custom reports and change exports for your provider&apos;s format</li>
+              <li>• Ficha do colaborador e alterações contratuais relevantes para a folha</li>
+              <li>• Registo de horas, ausências e excepções com trilho de aprovação</li>
+              <li>• Documentos e recibos integrados no perfil quando aplicável (ex.: fluxo com o PHC)</li>
+              <li>• Relatórios e exportações alinhados ao modelo que o PHC precisa</li>
             </ul>
           </div>
           <div className="border border-black/15 bg-white/70 p-6">
-            <h3 className="mb-3 font-bold uppercase tracking-wide text-sm">What your partner keeps</h3>
+            <h3 className="mb-3 text-sm font-bold uppercase tracking-wide">O que permanece no PHC</h3>
             <ul className={`space-y-2 ${cardBodyCls}`}>
-              <li>• Payslip generation and statutory compliance</li>
-              <li>• Bank files / regulatory filings (as applicable)</li>
-              <li>• Authoritative accounting entries (per your finance stack)</li>
+              <li>• Processamento salarial e títulos de remuneração</li>
+              <li>• Ficheiros bancários e obrigações legais (conforme o vosso processo)</li>
+              <li>• Contabilização autoritativa no vosso ERP / financeiro</li>
             </ul>
+            <p className="mt-4 text-sm opacity-70">
+              A Factorial é <strong>SaaS na nuvem</strong> (alinhado com Azure/AWS). Para dúvidas de soberania de dados,
+              o equipamento de IT pode validar a arquitectura — não há instalação &quot;on-premise&quot; da plataforma.
+            </p>
           </div>
         </div>
       </FlowSection>
 
-      {/* 10 Investment */}
+      {/* 10 Investimento */}
       <FlowSection
         innerClassName="!justify-start gap-6"
-        aria-label="Investment"
+        aria-label="Investimento"
         style={{ backgroundColor: "#0f0709", color: "#fff" }}
       >
-        <p className={labelCls}>10 — Investment</p>
+        <p className={labelCls}>10 — Investimento</p>
         <Divider light />
         <h2 className={headCls}>
           ROW USD
           <br />
-          Monthly
+          Mensal
         </h2>
         <Divider light />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-3 border border-white/20 p-6 text-[clamp(0.9rem,1.25vw,1.05rem)]">
-            <h3 className="font-bold uppercase tracking-wide text-sm mb-4">Monthly subscription</h3>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wide">Subscrição mensal</h3>
             <div className="flex justify-between gap-2 border-b border-white/10 pb-2">
               <span className="opacity-80">
-                {PRICING_ROW_USD.bundleName} ({SEATS} × ${PRICING_ROW_USD.listPricePerSeatPerMonth})
+                {PRICING_ROW_USD.bundleName} ({SEATS} × ${PRICING_ROW_USD.listPricePerSeatPerMonth} USD)
               </span>
-              <span className="font-medium">${PRICING_TOTALS_USD.licenseListSubtotal.toFixed(2)}/mo</span>
+              <span className="font-medium">${PRICING_TOTALS_USD.licenseListSubtotal.toFixed(2)}/mês</span>
             </div>
             <div className="flex justify-between gap-2 text-emerald-400">
-              <span>Nonprofit discount ({DISCOUNT_PCT}%)</span>
+              <span>Desconto comercial ({DISCOUNT_PCT}%)</span>
               <span>
                 −$
-                {(PRICING_TOTALS_USD.licenseListSubtotal - PRICING_TOTALS_USD.licenseDiscountedSubtotal).toFixed(2)}/mo
-              </span>
-            </div>
-            <div className="flex justify-between gap-2 pt-2 font-medium">
-              <span className="opacity-80">Licenses after discount</span>
-              <span>${PRICING_TOTALS_USD.licenseDiscountedSubtotal.toFixed(2)}/mo</span>
-            </div>
-            <div className="flex justify-between gap-2 pt-2 border-t border-white/10">
-              <span className="opacity-80">Recruitment ({PRICING_ROW_USD.recruitment.tier}) — list</span>
-              <span>${PRICING_TOTALS_USD.recruitmentListPerMonth.toFixed(2)}/mo</span>
-            </div>
-            <div className="flex justify-between gap-2 text-emerald-400">
-              <span>Nonprofit discount ({DISCOUNT_PCT}%)</span>
-              <span>
-                −$
-                {(
-                  PRICING_TOTALS_USD.recruitmentListPerMonth - PRICING_TOTALS_USD.recruitmentDiscountedSubtotal
-                ).toFixed(2)}
-                /mo
+                {(PRICING_TOTALS_USD.licenseListSubtotal - PRICING_TOTALS_USD.licenseDiscountedSubtotal).toFixed(2)}
+                /mês
               </span>
             </div>
             <div className="flex justify-between gap-2 pt-2 font-medium border-t border-white/10">
-              <span className="opacity-80">Recruitment after discount</span>
-              <span>${PRICING_TOTALS_USD.recruitmentDiscountedSubtotal.toFixed(2)}/mo</span>
+              <span className="opacity-80">Licenças após desconto</span>
+              <span>${PRICING_TOTALS_USD.licenseDiscountedSubtotal.toFixed(2)}/mês</span>
             </div>
+            <p className="pt-4 text-sm opacity-60">
+              Ordem de grandeza ano 1 (indicativa): licenças ~$
+              {(PRICING_TOTALS_USD.licenseDiscountedSubtotal * 12).toFixed(0)} + implementação única $
+              {PRICING_TOTALS_USD.implementationOneTime.toFixed(0)} ≈{" "}
+              <strong>
+                $
+                {(PRICING_TOTALS_USD.licenseDiscountedSubtotal * 12 + PRICING_TOTALS_USD.implementationOneTime).toFixed(
+                  0,
+                )}{" "}
+                USD
+              </strong>{" "}
+              (alinhado à conversa de ~8 000 USD/ano com desconto; valores finais no order form).
+            </p>
           </div>
           <div className="space-y-4">
             <div className="border-2 border-white/30 bg-white/5 p-6 text-center">
-              <p className="text-sm opacity-70 mb-2">Estimated monthly subscription</p>
+              <p className="mb-2 text-sm opacity-70">Total mensal estimado (só licenças)</p>
               <p className="text-[clamp(2.5rem,8vw,4.5rem)] font-light leading-none">
                 ${PRICING_TOTALS_USD.monthlyTotal.toFixed(2)}
               </p>
-              <p className="text-xs opacity-50 mt-2">USD · before taxes/fees if applicable</p>
+              <p className="mt-2 text-xs opacity-50">USD · antes de impostos ou taxas se aplicável</p>
             </div>
-            <div className="border border-white/20 p-5 text-sm space-y-2">
-              <p className="font-semibold">Implementation (one-time)</p>
+            <div className="space-y-2 border border-white/20 p-5 text-sm">
+              <p className="font-semibold">Implementação (única vez)</p>
               <p className="flex justify-between">
-                <span className="opacity-70">List (reference)</span>
+                <span className="opacity-70">Lista (referência)</span>
                 <span>${PRICING_TOTALS_USD.implementationListOneTime.toFixed(0)}</span>
               </p>
               <p className="flex justify-between text-emerald-400">
-                <span>Nonprofit discount ({DISCOUNT_PCT}%)</span>
+                <span>Desconto comercial ({DISCOUNT_PCT}%)</span>
                 <span>
                   −$
                   {(
@@ -590,45 +598,47 @@ export default function ProposalFlow() {
                 </span>
               </p>
               <p className="flex justify-between border-t border-white/15 pt-2 font-medium">
-                <span>Your price</span>
+                <span>O vosso preço</span>
                 <span>${PRICING_TOTALS_USD.implementationOneTime.toFixed(0)} USD</span>
               </p>
-              <p className="text-xs opacity-50 pt-2">
-                ~1 hour/week with your Specialist; ~1.5 months to go-live. Final scope in the order form.
+              <p className="pt-2 text-xs opacity-50">
+                ~1 sessão por semana com o especialista; ~1,5 meses até go-live. Âmbito final no order form.
               </p>
             </div>
-            <p className="text-sm opacity-60">Card or bank transfer in USD/EUR as agreed.</p>
+            <p className="text-sm opacity-60">Cartão ou transferência bancária em USD ou EUR, conforme acordo.</p>
             <a
-              href={`mailto:victor.gutierrez@factorial.co?subject=${encodeURIComponent(`${ORG} — Proposal confirmation`)}`}
+              href={`mailto:victor.gutierrez@factorial.co?subject=${encodeURIComponent(`${ORG} — Confirmação da proposta`)}`}
               className="inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-semibold text-black hover:opacity-90"
             >
-              Reply to confirm <ExternalLink className="h-4 w-4" />
+              Responder para confirmar <ExternalLink className="h-4 w-4" />
             </a>
           </div>
         </div>
       </FlowSection>
 
-      {/* 11 Demo + video */}
+      {/* 11 Demo */}
       <FlowSection
         innerClassName="!justify-start gap-6"
-        aria-label="Demo and product overview"
+        aria-label="Demonstração"
         style={{ backgroundColor: "#3d1522", color: "#fff" }}
       >
-        <p className={labelCls}>11 — Try it</p>
+        <p className={labelCls}>11 — Experimentar</p>
         <Divider light />
         <h2 className={headCls}>
           Demo &
           <br />
-          Overview
+          Visão geral
         </h2>
         <Divider light />
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
           <div className="flex-1 space-y-4">
-            <p className={bodyCls}>Explore Factorial in a demo workspace, or watch a short product overview.</p>
+            <p className={bodyCls}>
+              Explorem o Factorial num ambiente de demonstração ou vejam uma visão geral curta do produto.
+            </p>
             <div className="flex flex-col gap-4 border border-white/20 bg-black/20 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="font-semibold mb-1">Demo login</p>
-                <p className="text-xs sm:text-sm opacity-70 font-mono break-all">
+                <p className="mb-1 font-semibold">Credenciais demo</p>
+                <p className="break-all font-mono text-xs opacity-70 sm:text-sm">
                   hellen@demob25acc00.com · Papapapa333!
                 </p>
               </div>
@@ -636,23 +646,23 @@ export default function ProposalFlow() {
                 href="https://app.eu2.demo.factorial.dev/dashboard?switchToCompanyId=75113&redirect_uri=https://api.eu2.demo.factorial.dev/users/sign_in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center justify-center bg-white px-5 py-2.5 text-sm font-medium text-black hover:opacity-90"
+                className="inline-flex shrink-0 items-center justify-center bg-white px-5 py-2.5 text-sm font-medium text-black hover:opacity-90"
               >
-                Open demo
+                Abrir demo
               </a>
             </div>
             <div className="space-y-2">
               {[
                 {
-                  label: "Shifts (monthly)",
-                  url: "https://app.eu2.demo.factorial.dev/shifts/monthly/employees/2026/1/1",
+                  label: "Registo de horas (demo)",
+                  url: "https://app.eu2.demo.factorial.dev/attendance",
                 },
                 {
-                  label: "Time off approvals (Help Center)",
+                  label: "Ausências — Centro de ajuda",
                   url: "https://help.factorialhr.com/one/one-ai-%E2%80%93-time-off-management-approvals?from_search=218384939",
                 },
                 {
-                  label: "AI reports (demo)",
+                  label: "Relatórios com IA (demo)",
                   url: "https://app.eu2.demo.factorial.dev/analytics/reports/dashboards/105102/list/question",
                 },
               ].map((link) => (
@@ -669,9 +679,9 @@ export default function ProposalFlow() {
               ))}
             </div>
           </div>
-          <div className="w-full flex-1 max-w-3xl aspect-video border-2 border-white/25">
+          <div className="aspect-video w-full max-w-3xl flex-1 border-2 border-white/25">
             <iframe
-              title="Factorial product overview"
+              title="Visão geral Factorial"
               src="https://www.youtube.com/embed/6sUn2w1hRv0?start=26"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -681,62 +691,66 @@ export default function ProposalFlow() {
         </div>
       </FlowSection>
 
-      {/* 12 Onboarding */}
+      {/* 12 Implementação */}
       <FlowSection
         innerClassName="!justify-start gap-8"
-        aria-label="Implementation"
+        aria-label="Implementação"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>12 — Implementation</p>
+        <p className={labelCls}>12 — Implementação</p>
         <Divider />
         <h2 className={headCls}>
-          How we
+          Como
           <br />
-          Go live
+          arrancamos
         </h2>
         <Divider />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Structured weekly sessions so your team adopts Factorial confidently — without overwhelming day-to-day work.
+          Sessões semanais estruturadas para a equipa adoptar o Factorial com confiança — sem parar a operação do dia a
+          dia. A <strong>Pratique</strong> acompanha consultoria e formação no terreno; o contrato e o billing do
+          software são com a <strong>Factorial</strong>, como alinhado na sessão.
         </p>
         <Divider />
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="border border-black/15 bg-white/70 p-6">
-            <p className="text-xs uppercase tracking-widest opacity-50 mb-2">During implementation</p>
-            <h3 className="text-lg font-semibold mb-3">Dedicated Onboarding Specialist</h3>
-            <p className="text-[clamp(0.95rem,1.35vw,1.05rem)] opacity-80 mb-4 leading-relaxed">
-              Your Specialist configures Starter Planning: Core, Time Tracking, Time Off, Shifts, Recruitment basics,
-              and payroll-ready exports.
+            <p className="mb-2 text-xs uppercase tracking-widest opacity-50">Durante a implementação</p>
+            <h3 className="mb-3 text-lg font-semibold">Especialista de onboarding</h3>
+            <p className="mb-4 text-[clamp(0.95rem,1.35vw,1.05rem)] leading-relaxed opacity-80">
+              Configuração do {PRICING_ROW_USD.bundleName}: Core, registo de horas, ausências, formações, avaliação de
+              desempenho, envolvimento e exportações orientadas ao PHC.
             </p>
             <ul className="space-y-2 text-[clamp(0.9rem,1.2vw,1rem)]">
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> One live session per week
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Uma sessão ao vivo por semana
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Each session: 1 hour, actionable
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Cada sessão: 1 hora, orientada a entregáveis
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> ~1.5 months (≈6 weeks) to go-live
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> ~1,5 meses (cerca de 6 semanas) até go-live
               </li>
             </ul>
           </div>
           <div className="border border-black/15 bg-white/70 p-6">
-            <p className="text-xs uppercase tracking-widest opacity-50 mb-2">After go-live</p>
-            <h3 className="text-lg font-semibold mb-3">Your Account Manager</h3>
-            <p className="text-[clamp(0.95rem,1.35vw,1.05rem)] opacity-80 mb-4 leading-relaxed">
-              One named contact for adoption, renewals, and growing the platform — not a faceless ticket queue.
+            <p className="mb-2 text-xs uppercase tracking-widest opacity-50">Depois do go-live</p>
+            <h3 className="mb-3 text-lg font-semibold">Gestor de conta</h3>
+            <p className="mb-4 text-[clamp(0.95rem,1.35vw,1.05rem)] leading-relaxed opacity-80">
+              Um contacto nomeado para adopção, renovações e evolução da plataforma — incluindo follow-up preventivo,
+              mesmo quando está tudo a correr bem.
             </p>
             <ul className="space-y-2 text-[clamp(0.9rem,1.2vw,1rem)]">
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Specialist first, then one Account Manager
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Primeiro o especialista, depois um gestor de conta
               </li>
               <li className="flex gap-2">
-                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Ongoing alignment on usage and next modules
+                <Check className="mt-0.5 h-4 w-4 shrink-0" /> Acompanhamento contínuo de uso e próximos módulos
               </li>
             </ul>
           </div>
         </div>
-        <p className="mt-auto text-sm opacity-60 border-t border-black/10 pt-6">
-          Proposal prepared for {ORG} — 2026 · Scroll experience; reduce motion in system settings for a simpler view.
+        <p className="mt-auto border-t border-black/10 pt-6 text-sm opacity-60">
+          Proposta preparada para {ORG} — 2026 · Experiência em scroll; pode reduzir animação nas definições de
+          sistema para uma vista mais simples.
         </p>
       </FlowSection>
     </FlowArt>

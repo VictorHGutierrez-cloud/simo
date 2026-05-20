@@ -4,8 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-// GitHub Project Pages URL: /<repo>/
-const repoBase = "/therighteousfoundation/";
+// GitHub Pages (project): /<repo>/
+const repoBase = "/simo/";
 
 export default defineConfig(({ mode }) => ({
   base: repoBase,
