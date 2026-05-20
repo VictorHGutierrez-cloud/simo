@@ -1,18 +1,20 @@
 import { ArrowDown, Check, ExternalLink } from "lucide-react";
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
 import { CLIENT, PRICING_TOTALS_USD, PROPOSAL_PRICING } from "@/utils/constants";
 
-gsap.registerPlugin(ScrollToPlugin);
-
+/** Salto imediato (sem animação) — `scroll-behavior: smooth` no html pode atrasar o salto; desactivamos só neste clique. */
 function scrollToInvestmentSection() {
-  gsap.to(window, {
-    duration: 1.2,
-    scrollTo: { y: "#sec-investimento", autoKill: false },
-    ease: "power2.inOut",
-    onComplete: () => ScrollTrigger.refresh(),
+  const el = document.getElementById("sec-investimento");
+  if (!el) return;
+  const html = document.documentElement;
+  const previous = html.style.scrollBehavior;
+  html.style.scrollBehavior = "auto";
+  el.scrollIntoView({ block: "start", behavior: "auto" });
+  html.style.scrollBehavior = previous;
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
+    requestAnimationFrame(() => ScrollTrigger.refresh());
   });
 }
 
