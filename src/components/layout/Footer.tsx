@@ -21,7 +21,7 @@ const Footer = () => (
           </p>
         </div>
       </div>
-      <p className="mt-12 text-xs opacity-40 text-center">Proposal prepared for Righteous Foundation — 2026</p>
+      <p className="mt-12 text-xs opacity-40 text-center">Proposal prepared for Righteous Foundation · 2026</p>
     </div>
   </footer>
 );

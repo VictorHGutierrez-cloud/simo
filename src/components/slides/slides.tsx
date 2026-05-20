@@ -38,7 +38,7 @@ export const slides: SlideData[] = [
         <SectionLabel>Proposta Factorial</SectionLabel>
         <h1 className="text-[44px] md:text-[52px] font-light leading-[1.08] mb-4 max-w-[1200px]">{ORG}</h1>
         <p className="text-[17px] md:text-[19px] opacity-80 font-light mb-3">
-          {PROPOSAL_PRICING.bundleName} (Enterprise), ATS {PROPOSAL_PRICING.recruitment.tier} e Factorial One — Core,
+          {PROPOSAL_PRICING.bundleName} (Enterprise), ATS {PROPOSAL_PRICING.recruitment.tier} e Factorial One · Core,
           operações, formações, desempenho e envolvimento, com dados preparados para o PHC.
         </p>
         <p className="text-[14px] md:text-[15px] opacity-60 font-light">
@@ -71,7 +71,7 @@ export const slides: SlideData[] = [
             <p className="text-[15px] md:text-[16px] opacity-70 leading-snug mb-4">
               Avaliação de desempenho em <strong className="opacity-100">folhas Excel</strong>, cadastro físico e baixa
               manual no <strong className="opacity-100">PHC</strong>, picagem e ausências{" "}
-              <strong className="opacity-100">manuais</strong> — com dois técnicos de RH para ~80 colaboradores.
+              <strong className="opacity-100">manuais</strong> · com dois técnicos de RH para ~80 colaboradores.
             </p>
             <p className="text-[15px] md:text-[16px] opacity-70 leading-snug mb-4">
               Querem <strong className="opacity-100">automatizar</strong>, ter histórico de carreira e começar com 180°
@@ -79,7 +79,7 @@ export const slides: SlideData[] = [
               progresso.
             </p>
             <p className="text-[15px] md:text-[16px] opacity-70 leading-snug">
-              Os valores de investimento são o acordo SIMO — linha PEPM ({DISCOUNT_PCT}% off sobre lista), ATS Business (
+              Os valores de investimento são o acordo SIMO · linha PEPM ({DISCOUNT_PCT}% off sobre lista), ATS Business (
               {DISCOUNT_PCT}%) e tokens Factorial One ({ONE_DISCOUNT_PCT}% off), em USD mensais.
             </p>
           </div>
@@ -88,7 +88,7 @@ export const slides: SlideData[] = [
               {
                 icon: "📱",
                 title: "Mobile primeiro",
-                desc: "Picagem, ausências, assinaturas e tarefas na app — menos papel.",
+                desc: "Picagem, ausências, assinaturas e tarefas na app · menos papel.",
               },
               {
                 icon: "🧾",
@@ -103,7 +103,7 @@ export const slides: SlideData[] = [
               {
                 icon: "🤝",
                 title: "Preço acordo",
-                desc: `${DISCOUNT_PCT}% em PEPM/ATS · ${ONE_DISCOUNT_PCT}% em Factorial One — ver quadro mensal.`,
+                desc: `${DISCOUNT_PCT}% em PEPM/ATS · ${ONE_DISCOUNT_PCT}% em Factorial One · ver quadro mensal.`,
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-3 border border-foreground/15 p-3">
@@ -129,7 +129,7 @@ export const slides: SlideData[] = [
         <SectionLabel>O que pediram</SectionLabel>
         <SlideTitle>RH de ponta a ponta, com PHC na folha</SlideTitle>
         <SlideSubtitle>
-          Core, horas, ausências, LMS, desempenho, envolvimento, ATS {PROPOSAL_PRICING.recruitment.tier} e Factorial One —
+          Core, horas, ausências, LMS, desempenho, envolvimento, ATS {PROPOSAL_PRICING.recruitment.tier} e Factorial One:
           dados preparados para o PHC.
         </SlideSubtitle>
         <div className="grid grid-cols-2 gap-4 mt-5">
@@ -190,7 +190,7 @@ export const slides: SlideData[] = [
         <SectionLabel>Pacote recomendado</SectionLabel>
         <SlideTitle>{PROPOSAL_PRICING.bundleName} · Enterprise</SlideTitle>
         <SlideSubtitle>
-          Pacote mensal para {SEATS} colaboradores: bundle + ATS {PROPOSAL_PRICING.recruitment.tier} + Factorial One —
+          Pacote mensal para {SEATS} colaboradores: bundle + ATS {PROPOSAL_PRICING.recruitment.tier} + Factorial One:
           PEPM{" "}
           <strong className="opacity-100">${PROPOSAL_PRICING.pepmListPrice}</strong> antes do{" "}
           <strong className="opacity-100">{DISCOUNT_PCT}%</strong>; linha própria para tokens com{" "}
@@ -285,7 +285,7 @@ export const slides: SlideData[] = [
     content: (
       <div className="flex flex-col justify-center h-full px-14">
         <SectionLabel>Investimento</SectionLabel>
-        <SlideTitle>Valor mensal (USD) — conforme esta proposta</SlideTitle>
+        <SlideTitle>Valor mensal (USD) · conforme esta proposta</SlideTitle>
 
         <div className="grid grid-cols-2 gap-8 mt-2">
           <div className="space-y-3 border border-foreground/20 p-5 text-[13px]">
@@ -402,7 +402,7 @@ export const slides: SlideData[] = [
             <p className="text-[11px] uppercase tracking-widest opacity-50 mb-2">Depois</p>
             <h3 className="text-[17px] font-medium mb-3">Gestor de conta</h3>
             <p className="text-[13px] opacity-70 leading-snug mb-4">
-              Contacto nomeado para adopção e evolução da plataforma — com follow-up preventivo.
+              Contacto nomeado para adopção e evolução da plataforma · com follow-up preventivo.
             </p>
             <ul className="space-y-2 text-[12px] opacity-75">
               <li className="flex gap-2">
@@ -418,7 +418,7 @@ export const slides: SlideData[] = [
 
         <div className="mt-4 border-t border-foreground/15 pt-4 flex flex-wrap gap-4 items-center justify-between text-[12px] opacity-65">
           <span />
-          <span className="opacity-50">Proposta preparada para {ORG} — 2026</span>
+          <span className="opacity-50">Proposta preparada para {ORG} · 2026</span>
         </div>
       </div>
     ),

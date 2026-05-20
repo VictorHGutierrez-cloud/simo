@@ -6,7 +6,7 @@ const integrations = [
   { title: "Payroll export templates", description: "Generate spreadsheet exports aligned to what your payroll partner needs (column mapping as a milestone)." },
   { title: "Approvals & audit trail", description: "Managers approve exceptions; HR keeps traceability for audits and leadership questions." },
   { title: "Optional future integrations", description: "You can connect additional systems later depending on your payroll/IT stack." },
-  { title: "Security posture", description: "Role-based access — employees see their data; admins see what they must administer." },
+  { title: "Security posture", description: "Role-based access · employees see their data; admins see what they must administer." },
 ];
 
 const fadeUp = {
@@ -28,7 +28,7 @@ const IntegrationSection = () => {
         <h2 className="text-sm tracking-widest uppercase opacity-60 mb-4">Architecture</h2>
         <p className="text-2xl md:text-3xl font-light mb-6 max-w-2xl">HR operations in Factorial, payroll execution with your provider</p>
         <p className="text-base opacity-60 mb-16 max-w-xl">
-          Factorial is the HR hub: employee experience, attendance, time off, documents, and recruiting. Payroll stays with the provider you select — Factorial focuses on clean inputs.
+          Factorial is the HR hub: employee experience, attendance, time off, documents, and recruiting. Payroll stays with the provider you select · Factorial focuses on clean inputs.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">

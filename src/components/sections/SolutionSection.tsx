@@ -14,7 +14,7 @@ const features = [
 const gains = [
   { title: "Fewer manual spreadsheets", description: "Centralize attendance and time off so reports stop breaking mid-month." },
   { title: "Better employee experience", description: "A modern inbox for tasks: sign, request, upload, and get answers faster." },
-  { title: "Payroll-friendly outputs", description: "Prepare the inputs your payroll partner needs — without pretending payroll is processed inside Factorial." },
+  { title: "Payroll-friendly outputs", description: "Prepare the inputs your payroll partner needs · without pretending payroll is processed inside Factorial." },
 ];
 
 const fadeUp = {

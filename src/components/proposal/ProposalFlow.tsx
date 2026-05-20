@@ -33,7 +33,7 @@ export default function ProposalFlow() {
     <FlowArt aria-label={`Proposta Factorial para ${ORG}`}>
       {/* 01 Capa */}
       <FlowSection aria-label="Capa" style={{ backgroundColor: "#FF355E", color: "#fff" }}>
-        <p className={labelCls}>01 — Proposta Factorial</p>
+        <p className={labelCls}>01 · Proposta Factorial</p>
         <Divider light />
         <div>
           <h1 className={headCls}>
@@ -47,7 +47,7 @@ export default function ProposalFlow() {
         <Divider light />
         <p className={`mt-auto max-w-[55ch] ${bodyCls}`}>
           {PROPOSAL_PRICING.bundleName} (Enterprise), <strong>ATS em plano Business</strong> e{" "}
-          <strong>Factorial One</strong> (tokens de IA) — um fluxo único de Core, operações, formações, desempenho e
+          <strong>Factorial One</strong> (tokens de IA) · um fluxo único de Core, operações, formações, desempenho e
           envolvimento, com dados preparados para o PHC.
         </p>
         <p className={`text-[clamp(0.85rem,1.3vw,1rem)] opacity-80`}>
@@ -71,7 +71,7 @@ export default function ProposalFlow() {
         aria-label="Contexto"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>02 — Contexto</p>
+        <p className={labelCls}>02 · Contexto</p>
         <Divider />
         <h2 className={headCls}>
           Porquê um novo
@@ -105,7 +105,7 @@ export default function ProposalFlow() {
               {
                 icon: "📱",
                 title: "Mobile em primeiro lugar",
-                desc: "Picagem, pedidos de ausência, assinaturas e tarefas na app Factorial — menos papel e menos e-mail.",
+                desc: "Picagem, pedidos de ausência, assinaturas e tarefas na app Factorial · menos papel e menos e-mail.",
               },
               {
                 icon: "🧾",
@@ -115,12 +115,12 @@ export default function ProposalFlow() {
               {
                 icon: "🌍",
                 title: "Um só sistema",
-                desc: "Ficha, presenças, ausências e documentos no mesmo sítio — não dispersos em folhas Excel.",
+                desc: "Ficha, presenças, ausências e documentos no mesmo sítio · não dispersos em folhas Excel.",
               },
               {
                 icon: "🤝",
                 title: "Preço acordo",
-                desc: `PEPM e ATS com ${DISCOUNT_PCT}%; Factorial One com ${ONE_DISCOUNT_PCT}% — linha a linha na secção de investimento.`,
+                desc: `PEPM e ATS com ${DISCOUNT_PCT}%; Factorial One com ${ONE_DISCOUNT_PCT}% · linha a linha na secção de investimento.`,
               },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 border border-black/15 bg-white/50 p-4">
@@ -141,7 +141,7 @@ export default function ProposalFlow() {
         aria-label="O que pediram"
         style={{ backgroundColor: "hsl(347 50% 18%)", color: "#fff" }}
       >
-        <p className={labelCls}>03 — O que pediram</p>
+        <p className={labelCls}>03 · O que pediram</p>
         <Divider light />
         <h2 className={headCls}>
           RH de ponta
@@ -151,7 +151,7 @@ export default function ProposalFlow() {
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
           Ficha e documentos digitais, registo de horas e ausências com aprovações, formações (LMS), avaliação de
-          desempenho, envolvimento e recrutamento com <strong>ATS Business</strong> — e exportação estruturada para o{" "}
+          desempenho, envolvimento e recrutamento com <strong>ATS Business</strong> · e exportação estruturada para o{" "}
           <strong>PHC</strong>, que continua a processar a folha de retribuição.
         </p>
         <Divider light />
@@ -190,7 +190,7 @@ export default function ProposalFlow() {
             {
               icon: "📣",
               title: `Recrutamento (${PROPOSAL_PRICING.recruitment.tier})`,
-              desc: "ATS com páginas de carreira, pipeline, integrações e comunicação com candidatos — alinhado ao vosso ritmo de vagas.",
+              desc: "ATS com páginas de carreira, pipeline, integrações e comunicação com candidatos · alinhado ao vosso ritmo de vagas.",
             },
           ].map((f) => (
             <div key={f.title} className="border border-white/20 p-4">
@@ -208,7 +208,7 @@ export default function ProposalFlow() {
         aria-label="Pacote recomendado"
         style={{ backgroundColor: "#0f0709", color: "#fff" }}
       >
-        <p className={labelCls}>04 — Pacote recomendado</p>
+        <p className={labelCls}>04 · Pacote recomendado</p>
         <Divider light />
         <h2 className={headCls}>
           {PROPOSAL_PRICING.bundleName}
@@ -219,7 +219,7 @@ export default function ProposalFlow() {
         <p className={`max-w-[60ch] ${bodyCls}`}>
           Pacote mensal combinado para <strong>{SEATS}</strong> colaboradores: <strong>bundle</strong> com Core,{" "}
           <strong>registo de horas</strong>, <strong>ausências</strong>, <strong>formações</strong>,{" "}
-          <strong>Performance</strong> e <strong>Engagement</strong>, mais <strong>ATS {PROPOSAL_PRICING.recruitment.tier}</strong> para suportar o volume de candidaturas e vagas activas — e pacote <strong>Factorial One</strong> para automação segura dentro da Factorial (tokens de IA, mensais).
+          <strong>Performance</strong> e <strong>Engagement</strong>, mais <strong>ATS {PROPOSAL_PRICING.recruitment.tier}</strong> para suportar o volume de candidaturas e vagas activas · e pacote <strong>Factorial One</strong> para automação segura dentro da Factorial (tokens de IA, mensais).
         </p>
         <Divider light />
         <div className="grid gap-8 lg:grid-cols-2">
@@ -284,8 +284,9 @@ export default function ProposalFlow() {
           <div className="space-y-4 border border-white/20 p-6">
             <h3 className="text-lg font-bold uppercase tracking-wide">ATS {PROPOSAL_PRICING.recruitment.tier} + Factorial One</h3>
             <p className={`${bodyCls} opacity-90`}>
-              O <strong>plano Business do recrutamento</strong> permite gerir vagas activas com pipeline claro —
-              página de emprego, sourcing, comunicação — sem depender de folhas paralelas quando o volume ou a urgência sobem (ainda que o ritmo médio de contratação varie ao longo do ano).
+              O <strong>plano Business do recrutamento</strong> permite gerir vagas activas com pipeline claro:
+              página de emprego, sourcing e comunicação, sem depender de folhas paralelas quando o volume ou a urgência
+              sobem (ainda que o ritmo médio de contratação varie ao longo do ano).
             </p>
             <ul className="space-y-2 text-[clamp(0.9rem,1.3vw,1.05rem)] opacity-90">
               <li className="flex gap-2">
@@ -299,7 +300,7 @@ export default function ProposalFlow() {
               </li>
             </ul>
             <p className="border-t border-white/20 pt-4 text-sm opacity-70">
-              Referência interna: <strong>prazo operacional até final de junho de 2026</strong> — urgência registada na
+              Referência interna: <strong>prazo operacional até final de junho de 2026</strong> · urgência registada na
               reunião com a equipa.
             </p>
           </div>
@@ -312,7 +313,7 @@ export default function ProposalFlow() {
         aria-label="Experiência móvel"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>05 — Experiência móvel</p>
+        <p className={labelCls}>05 · Experiência móvel</p>
         <Divider />
         <h2 className={headCls}>
           Feito para o
@@ -322,7 +323,7 @@ export default function ProposalFlow() {
         <Divider />
         <p className={`max-w-[55ch] ${bodyCls}`}>
           Os colaboradores usam a app Factorial no dia a dia: picagem com contexto de localização, pedidos de
-          ausência, assinaturas e tarefas de admissão — tudo a partir de uma única caixa de entrada.
+          ausência, assinaturas e tarefas de admissão · tudo a partir de uma única caixa de entrada.
         </p>
         <Divider />
         <div className="flex flex-wrap gap-[3vw]">
@@ -337,7 +338,7 @@ export default function ProposalFlow() {
             },
             {
               title: "Segurança de acesso",
-              desc: "Camadas de SSO e registo de auditoria — útil quando partilham postos de trabalho e para IT avaliar risco.",
+              desc: "Camadas de SSO e registo de auditoria · útil quando partilham postos de trabalho e para IT avaliar risco.",
             },
           ].map((x) => (
             <div key={x.title} className="min-w-[200px] flex-1 border border-black/15 bg-white/60 p-5">
@@ -354,7 +355,7 @@ export default function ProposalFlow() {
         aria-label="Operações e folha"
         style={{ backgroundColor: "hsl(347 50% 18%)", color: "#fff" }}
       >
-        <p className={labelCls}>06 — Operações</p>
+        <p className={labelCls}>06 · Operações</p>
         <Divider light />
         <h2 className={headCls}>
           Horas e
@@ -363,8 +364,8 @@ export default function ProposalFlow() {
         </h2>
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Folhas de horas validadas, visibilidade em tempo real e exportações que o financeiro pode cruzar com o PHC —
-          menos reconciliação manual no fecho.
+          Folhas de horas validadas, visibilidade em tempo real e exportações que o financeiro pode cruzar com o PHC,
+          com menos reconciliação manual no fecho.
         </p>
         <Divider light />
         <div className="grid gap-4 sm:grid-cols-2">
@@ -377,7 +378,7 @@ export default function ProposalFlow() {
             {
               icon: "📊",
               title: "Painel de presenças",
-              desc: "Quem picou, quem falta, pausas — em tempo real para gestão e RH.",
+              desc: "Quem picou, quem falta, pausas · em tempo real para gestão e RH.",
             },
             {
               icon: "🏖️",
@@ -387,7 +388,7 @@ export default function ProposalFlow() {
             {
               icon: "⏱️",
               title: "Horas extraordinárias",
-              desc: "Regras de HE e banco de horas, conforme política — suporte ao cálculo correto no processamento.",
+              desc: "Regras de HE e banco de horas, conforme política · suporte ao cálculo correto no processamento.",
             },
           ].map((f) => (
             <div key={f.title} className="flex gap-4 border border-white/20 p-4">
@@ -407,7 +408,7 @@ export default function ProposalFlow() {
         aria-label="Documentos e admissão"
         style={{ backgroundColor: "#0f0709", color: "#fff" }}
       >
-        <p className={labelCls}>07 — Documentos e admissão</p>
+        <p className={labelCls}>07 · Documentos e admissão</p>
         <Divider light />
         <h2 className={headCls}>
           Assinar &
@@ -416,7 +417,7 @@ export default function ProposalFlow() {
         </h2>
         <Divider light />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Centralizar ficheiros de RH, recolher assinaturas válidas e conduzir admissões com tarefas — em vez de
+          Centralizar ficheiros de RH, recolher assinaturas válidas e conduzir admissões com tarefas · em vez de
           processos apenas em papel e arquivo físico.
         </p>
         <Divider light />
@@ -427,7 +428,7 @@ export default function ProposalFlow() {
               "Enviar, assinar e acompanhar documentos em massa (web e app)",
               "Fluxos de admissão e saída com tarefas atribuídas",
               "Recolha estruturada de documentos de identificação nas pastas certas",
-              "Funções e permissões — controlar quem vê o quê",
+              "Funções e permissões · controlar quem vê o quê",
             ].map((t) => (
               <li key={t} className="flex gap-3 border border-white/15 p-3">
                 <Check className="mt-1 h-4 w-4 shrink-0 opacity-80" />
@@ -438,7 +439,7 @@ export default function ProposalFlow() {
           <div className="border border-white/20 p-6">
             <h3 className="text-lg font-semibold mb-3">Do aceitar a oferta ao primeiro dia</h3>
             <p className="text-[clamp(0.95rem,1.35vw,1.1rem)] opacity-80 leading-relaxed">
-              Depois da seleção interna, a admissão continua no Core: dados pessoais, assinaturas e anexos — para o
+              Depois da seleção interna, a admissão continua no Core: dados pessoais, assinaturas e anexos · para o
               colaborador poder picar e pedir ausências desde o primeiro dia, com menos trabalho repetitivo para o RH.
             </p>
           </div>
@@ -451,7 +452,7 @@ export default function ProposalFlow() {
         aria-label="Desempenho formações envolvimento"
         style={{ backgroundColor: "#07A2AD", color: "#fff" }}
       >
-        <p className={labelCls}>08 — Desempenho, formações e envolvimento</p>
+        <p className={labelCls}>08 · Desempenho, formações e envolvimento</p>
         <Divider light />
         <h2 className={headCls}>
           Talentos
@@ -462,7 +463,7 @@ export default function ProposalFlow() {
         <p className={`max-w-[55ch] ${bodyCls}`}>
           Substituir as folhas Excel por ciclos de avaliação, ligar o desempenho a planos de ação e formar na mesma
           plataforma (LMS). O Factorial One permanece{" "}
-          <strong>dentro do ambiente Factorial</strong> — útil quando a instituição se preocupa com confidencialidade e
+          <strong>dentro do ambiente Factorial</strong> · útil quando a instituição se preocupa com confidencialidade e
           uso de IA genérica.
         </p>
         <Divider light />
@@ -474,7 +475,7 @@ export default function ProposalFlow() {
             },
             {
               title: "Formações (LMS)",
-              desc: "Catálogo, vídeos e PDFs, testes de conhecimento e pedidos de formação — inclusive a partir do PDI.",
+              desc: "Catálogo, vídeos e PDFs, testes de conhecimento e pedidos de formação · inclusive a partir do PDI.",
             },
             {
               title: "Envolvimento",
@@ -495,7 +496,7 @@ export default function ProposalFlow() {
         aria-label="PHC e folha"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>09 — PHC e folha de retribuição</p>
+        <p className={labelCls}>09 · PHC e folha de retribuição</p>
         <Divider />
         <h2 className={headCls}>
           Factorial
@@ -505,7 +506,7 @@ export default function ProposalFlow() {
         <Divider />
         <p className={`max-w-[55ch] ${bodyCls}`}>
           A Factorial prepara e ordena os dados de RH; o <strong>PHC</strong> continua a processar a folha de
-          retribuição e a emitir recibos de vencimento. O objectivo é retirar o retrabalho manual de conciliação —
+          retribuição e a emitir recibos de vencimento. O objectivo é retirar o retrabalho manual de conciliação:
           contratos, horas, ausências e eventos passam a ter histórico estruturado.
         </p>
         <Divider />
@@ -528,7 +529,7 @@ export default function ProposalFlow() {
             </ul>
             <p className="mt-4 text-sm opacity-70">
               A Factorial é <strong>SaaS na nuvem</strong> (alinhado com Azure/AWS). Para dúvidas de soberania de dados,
-              o equipamento de IT pode validar a arquitectura — não há instalação &quot;on-premise&quot; da plataforma.
+              o equipamento de IT pode validar a arquitectura · não há instalação &quot;on-premise&quot; da plataforma.
             </p>
           </div>
         </div>
@@ -540,7 +541,7 @@ export default function ProposalFlow() {
         aria-label="Investimento"
         style={{ backgroundColor: "#0f0709", color: "#fff" }}
       >
-        <p className={labelCls}>10 — Investimento</p>
+        <p className={labelCls}>10 · Investimento</p>
         <Divider light />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6 border border-white/20 p-6 text-[clamp(0.85rem,1.2vw,1.05rem)]">
@@ -624,7 +625,7 @@ export default function ProposalFlow() {
             </div>
             <p className="text-sm opacity-60">Cartão ou transferência bancária em USD ou EUR, conforme acordo.</p>
             <a
-              href={`mailto:victor.gutierrez@factorial.co?subject=${encodeURIComponent(`${ORG} — Confirmação da proposta`)}`}
+              href={`mailto:victor.gutierrez@factorial.co?subject=${encodeURIComponent(`${ORG}: Confirmação da proposta`)}`}
               className="inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-semibold text-black hover:opacity-90"
             >
               Responder para confirmar <ExternalLink className="h-4 w-4" />
@@ -639,7 +640,7 @@ export default function ProposalFlow() {
         aria-label="Demonstração"
         style={{ backgroundColor: "#3d1522", color: "#fff" }}
       >
-        <p className={labelCls}>11 — Experimentar</p>
+        <p className={labelCls}>11 · Experimentar</p>
         <Divider light />
         <h2 className={headCls}>
           Demo &
@@ -675,7 +676,7 @@ export default function ProposalFlow() {
                   url: "https://app.eu2.demo.factorial.dev/attendance",
                 },
                 {
-                  label: "Ausências — Centro de ajuda",
+                  label: "Ausências · Centro de ajuda",
                   url: "https://help.factorialhr.com/one/one-ai-%E2%80%93-time-off-management-approvals?from_search=218384939",
                 },
                 {
@@ -714,7 +715,7 @@ export default function ProposalFlow() {
         aria-label="Implementação"
         style={{ backgroundColor: "#F5F0E8", color: "#1a1a1a" }}
       >
-        <p className={labelCls}>12 — Implementação</p>
+        <p className={labelCls}>12 · Implementação</p>
         <Divider />
         <h2 className={headCls}>
           Como
@@ -723,7 +724,7 @@ export default function ProposalFlow() {
         </h2>
         <Divider />
         <p className={`max-w-[55ch] ${bodyCls}`}>
-          Sessões semanais estruturadas para a equipa adoptar o Factorial com confiança — sem parar a operação do dia a
+          Sessões semanais estruturadas para a equipa adoptar o Factorial com confiança · sem parar a operação do dia a
           dia. A <strong>Pratiq</strong> acompanha consultoria e formação no terreno; o contrato e o billing do
           software são com a <strong>Factorial</strong>, como alinhado na sessão.
         </p>
@@ -752,7 +753,7 @@ export default function ProposalFlow() {
             <p className="mb-2 text-xs uppercase tracking-widest opacity-50">Depois do go-live</p>
             <h3 className="mb-3 text-lg font-semibold">Gestor de conta</h3>
             <p className="mb-4 text-[clamp(0.95rem,1.35vw,1.05rem)] leading-relaxed opacity-80">
-              Um contacto nomeado para adopção, renovações e evolução da plataforma — incluindo follow-up preventivo,
+              Um contacto nomeado para adopção, renovações e evolução da plataforma · incluindo follow-up preventivo,
               mesmo quando está tudo a correr bem.
             </p>
             <ul className="space-y-2 text-[clamp(0.9rem,1.2vw,1rem)]">
@@ -765,10 +766,6 @@ export default function ProposalFlow() {
             </ul>
           </div>
         </div>
-        <p className="mt-auto border-t border-black/10 pt-6 text-sm opacity-60">
-          Proposta preparada para {ORG} — 2026 · Experiência em scroll; pode reduzir animação nas definições de
-          sistema para uma vista mais simples.
-        </p>
       </FlowSection>
     </FlowArt>
   );

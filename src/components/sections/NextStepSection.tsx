@@ -44,7 +44,7 @@ const fadeUp = {
 
 const NextStepSection = () => {
   const emailAddress = "victor.gutierrez@factorial.co";
-  const emailSubject = `${CLIENT.organizationName} — Next steps with Factorial`;
+  const emailSubject = `${CLIENT.organizationName} · Next steps with Factorial`;
   const emailBody = `Hi Victor,\n\nWe'd like to move forward with the Factorial proposal for ${CLIENT.organizationName}.\n\nBest regards`;
   const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
@@ -96,7 +96,7 @@ const NextStepSection = () => {
           >
             Contact Victor Gutierrez
           </a>
-          <p className="mt-12 text-xs opacity-40">Proposal prepared for {CLIENT.organizationName} — 2026</p>
+          <p className="mt-12 text-xs opacity-40">Proposal prepared for {CLIENT.organizationName} · 2026</p>
         </div>
       </div>
     </section>

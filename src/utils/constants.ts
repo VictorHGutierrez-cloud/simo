@@ -1,5 +1,5 @@
 /**
- * SIMO — preços da proposta (USD, mensal).
+ * SIMO · preços da proposta (USD, mensal).
  * Acordo comercial específico; valores indicados são os da proposta, não lista ROW genérica.
  */
 
@@ -8,7 +8,7 @@ export const CLIENT = {
   seatCount: 80,
   /** PEPM / recrutamento (lista → preço aplicado). */
   licenseDiscountPercent: 30,
-  /** Tokens Factorial ONE — desconto na linha própria. */
+  /** Tokens Factorial ONE · desconto na linha própria. */
   factorialOneDiscountPercent: 50,
 } as const;
 
@@ -54,7 +54,7 @@ const effectivePepm = PRICING_TOTALS_USD.monthlyTotal / CLIENT.seatCount;
 
 export const DEFAULT_VALUES = {
   empresa: CLIENT.organizationName,
-  contacto: "SIMO — equipa de RH",
+  contacto: "SIMO · equipa de RH",
   totalColaboradoresInternos: CLIENT.seatCount,
   totalColaboradoresExternos: 0,
   custoColaboradorMes_USD: effectivePepm,

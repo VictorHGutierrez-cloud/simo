@@ -26,7 +26,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl opacity-80 max-w-2xl mb-4 font-light leading-relaxed">
-            HR operations for a distributed nonprofit — attendance, time off, documents, and recruitment in one place.
+            HR operations for a distributed nonprofit · attendance, time off, documents, and recruitment in one place.
           </p>
 
           <p className="text-base opacity-60 max-w-xl mb-12 font-light leading-relaxed">

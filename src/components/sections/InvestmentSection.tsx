@@ -15,7 +15,7 @@ const InvestmentSection = () => {
     <section id="investment" className="py-24 md:py-32 lg:py-40 bg-background text-foreground px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-sm tracking-widest uppercase opacity-60 mb-4">Investimento</h2>
-        <p className="text-2xl md:text-3xl font-light mb-4 max-w-2xl">Resumo comercial — {CLIENT.organizationName}</p>
+        <p className="text-2xl md:text-3xl font-light mb-4 max-w-2xl">Resumo comercial · {CLIENT.organizationName}</p>
         <p className="text-sm opacity-50 mb-10 max-w-xl">
           PEPM ${PROPOSAL_PRICING.pepmListPrice} × {CLIENT.seatCount} lugares ({CLIENT.licenseDiscountPercent}% off) ·
           Recrutamento {PROPOSAL_PRICING.recruitment.tier} ({CLIENT.licenseDiscountPercent}% off) · Factorial One ({CLIENT.factorialOneDiscountPercent}% off) · valores em USD mensais conforme esta proposta
@@ -44,7 +44,7 @@ const InvestmentSection = () => {
             <div className="space-y-3 text-sm">
               <p className="font-medium opacity-90">Licenças (PEPM)</p>
               <div className="flex justify-between opacity-60">
-                <span>{PROPOSAL_PRICING.bundleName} — lista ({CLIENT.seatCount} × {formatUSD(PROPOSAL_PRICING.pepmListPrice)})</span>
+                <span>{PROPOSAL_PRICING.bundleName} · lista ({CLIENT.seatCount} × {formatUSD(PROPOSAL_PRICING.pepmListPrice)})</span>
                 <span>{formatUSD(PRICING_TOTALS_USD.licenseListSubtotal)}</span>
               </div>
               <div className="flex justify-between opacity-60">

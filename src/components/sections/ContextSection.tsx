@@ -4,7 +4,7 @@ import { CLIENT } from "@/utils/constants";
 const cards = [
   {
     title: "Organization",
-    description: `${CLIENT.organizationName} — nonprofit team working across regions with a strong remote footprint.`,
+    description: `${CLIENT.organizationName} · nonprofit team working across regions with a strong remote footprint.`,
   },
   {
     title: "Team size",
@@ -37,7 +37,7 @@ const ContextSection = () => {
         <div className="space-y-8 text-lg md:text-xl leading-relaxed font-light mb-16">
           <p className="text-2xl md:text-3xl font-normal">Why this investment matters now</p>
           <p className="opacity-80">
-            You need an HR layer that employees will actually use on mobile, with approvals and exports that Finance and Payroll can rely on — without going back to spreadsheets.
+            You need an HR layer that employees will actually use on mobile, with approvals and exports that Finance and Payroll can rely on · without going back to spreadsheets.
           </p>
         </div>
 
